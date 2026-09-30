@@ -49,6 +49,8 @@ No Python. No Node. No SQLite. Just files.
 ## What you get
 
 - 🧠 **Two-tier memory** — A searchable ledger of every feature you have built, with automatic archival when it grows.
+- 🌿 **Branch per feature** — Each feature lives on its own branch, keeping `main` clean and the history traceable.
+- 📋 **Temporary checklists** — Complex features get a `CHECKLIST.md` that fills the memory as tasks are completed, then disappears.
 - 🤖 **Focused subagents** — Code reviewer, security auditor, and QA engineer, invoked only when you ask for them.
 - 📐 **Modular rules** — Code style, conventions, and testing live in their own files, loaded on demand.
 - 🏗️ **Project structure** — A living map of your project, kept up to date.
@@ -66,6 +68,7 @@ your-project/
 ├── DESIGN.md                  # Design system (committed, optional)
 ├── STRUCTURE.md               # Project map (committed)
 ├── harness-verified.json      # Setup state flag
+├── CHECKLIST.md               # Temporary, per-feature (gitignored)
 ├── .gitignore                 # Excludes personal files
 ├── .claude/
 │   ├── settings.json          # Shared permissions (committed)
@@ -170,11 +173,12 @@ and drag only these items into your project:
 - `memory/` (folder)
 - `CLAUDE.md` (file)
 
-Then manually add these two lines to your project's `.gitignore`:
+Then manually add these three lines to your project's `.gitignore`:
 
 ```
 .claude/personal-instructions.md
 .claude/settings.local.json
+CHECKLIST.md
 ```
 
 ### 2. Activate Minimal Claudeness
@@ -195,6 +199,7 @@ Then it will:
 - Fill in `PROJECT OVERVIEW` and `STACK` in `CLAUDE.md` (if the project has content).
 - Generate `STRUCTURE.md` from your directory tree.
 - Create `.claude/personal-instructions.md` for you.
+- Ensure your `.gitignore` has the three required lines.
 - Mark the harness as verified.
 - Show you what is available.
 
@@ -204,9 +209,9 @@ No confirmation needed. Just open Claude Code and say hi.
 
 Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if something similar already exists. If it does, it stops and asks.
 
-After implementing, it appends a new entry. No manual bookkeeping.
+For meaningful features, Claude creates a `feature/<short-name>` branch and a temporary `CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
 
-Every ~100 features, it suggests compacting the oldest ones into `FEATURES-HISTORY.md`.
+Every ~100 features, Claude suggests compacting the oldest ones into `FEATURES-HISTORY.md`.
 
 ---
 
@@ -248,12 +253,22 @@ Example entry:
 ## 2024-05-10 - Contact page with form
 - **Keywords:** contact, form, smtp, email
 - **Files:** src/pages/Contact.tsx, src/api/mail.ts
+- **Branch:** feature/contact-form-smtp
 - **Status:** completed
 ```
 
 **`memory/FEATURES-HISTORY.md`** — Archive. Older entries, kept forever, read only when you explicitly ask for it (`/find-feature --all`).
 
 The format is defined in `.claude/rules/features-format.md`.
+
+### Feature workflow
+
+1. **Search** — Claude checks `memory/FEATURES.md` for related work.
+2. **Branch** — For meaningful features, Claude creates `feature/<short-name>`.
+3. **Checklist** — For complex features, Claude creates a temporary `CHECKLIST.md`.
+4. **Implement** — Work happens on the branch, checklist updates as tasks complete.
+5. **Record** — Meaningful deliverables are appended to `memory/FEATURES.md` with branch, keywords, and files.
+6. **Close** — When done, `CHECKLIST.md` is deleted. The branch is ready for review.
 
 ---
 
@@ -279,6 +294,7 @@ The rules files are empty by default with clear placeholders. Fill them when you
 - **No dependencies.** Pure text, pure Git, pure Claude.
 - **Explicit over automatic.** You decide when to invoke agents, not the model.
 - **Memory that scales.** Two tiers, archived forever, searchable on demand.
+- **Traceable work.** Every feature has a branch, a memory entry, and (if complex) a checklist.
 - **Yours.** Personal instructions stay private, project rules stay shared.
 
 > Claude Code is powerful on its own. Minimal Claudeness just gives it a place to think.
