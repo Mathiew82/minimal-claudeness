@@ -91,39 +91,67 @@ your-project/
 
 ## How to install
 
-### 1. Clone it into your project
+### 1. Add Minimal Claudeness to your project
 
 Make sure your project folder already exists before running these commands.
-Replace `your-project` with the actual path to your project.
 
-**Linux / macOS:**
+**Step 1 — Clone the harness:**
 
 ```bash
 git clone https://github.com/Mathiew82/minimal-claudeness.git
-cp -r minimal-claudeness/. your-project/
 ```
 
-**Windows (PowerShell):**
+**Step 2 — Remove its Git history:**
 
-```powershell
-git clone https://github.com/Mathiew82/minimal-claudeness.git
+```bash
+cd minimal-claudeness
+```
+```bash
+rm -rf .git        # Linux / macOS
+```
+```bash
+rmdir /S /Q .git   # Windows (CMD)
+```
+```bash
+Remove-Item -Path ".git" -Recurse -Force  # Windows (PowerShell)
+```
+```bash
+cd ..
+```
+
+**Step 3 — Copy the content into your project:**
+
+```bash
+# Linux / macOS
+cp -r minimal-claudeness/. your-project/
+```
+```bash
+# Windows (CMD)
+xcopy minimal-claudeness your-project /E /I /H /Y
+```
+```bash
+# Windows (PowerShell)
 Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
 
-**Windows (CMD):**
+The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
+or `.gitignore` are missing after the copy, use the manual method below.
 
-```cmd
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-xcopy minimal-claudeness your-project /E /I /H /Y
-```
+**Cleanup:**
 
-**Alternative (works everywhere):**
+Once the content is copied, you can safely delete the `minimal-claudeness`
+folder — you no longer need it.
 
 ```bash
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-cd minimal-claudeness
-# Copy the files you need manually, or drag and drop in your file explorer.
+rm -rf minimal-claudeness        # Linux / macOS
+rmdir /S /Q minimal-claudeness   # Windows (CMD)
+Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 ```
+
+**Manual (any OS):**
+
+After Step 2, open the `minimal-claudeness` folder in your file explorer
+and drag everything into your project.
 
 Or copy only the files you need. It is all plain text.
 
