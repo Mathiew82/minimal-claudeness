@@ -94,31 +94,32 @@ your-project/
 ### 1. Add Minimal Claudeness to your project
 
 Make sure your project folder already exists before running these commands.
-Replace `your-project` with the actual path to your project.
 
 **Linux / macOS:**
 
 ```bash
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
-rsync -av --exclude='.git' minimal-claudeness/ your-project/
+git clone https://github.com/Mathiew82/minimal-claudeness.git
+cp -r minimal-claudeness/. your-project/
+rm -rf your-project/.git
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 Get-ChildItem -Path "minimal-claudeness" -Exclude ".git" -Force | 
     Copy-Item -Destination "your-project\" -Recurse -Force
 ```
 
-**Alternative (any OS, works everywhere):**
+**Manual (any OS):**
 
-Clone the repo, open the folder in your file explorer, and copy the
-files you need manually into your project. Skip the `.git` folder.
+Clone the repo and copy the files you need manually, skipping `.git`:
 
 ```bash
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 ```
+
+Then drag and drop everything except `.git` into your project.
 
 Or copy only the files you need. It is all plain text.
 
