@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/images/logo-min.png" alt="Minimal Claudeness" width="300">
+</p>
+
 # Minimal Claudeness
 
 > The essence of working with Claude Code. No dependencies, no noise, no bloat.
