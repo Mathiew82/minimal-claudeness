@@ -155,7 +155,7 @@ cp -r minimal-claudeness/. your-project/
 <summary>Windows (CMD)</summary>
 
 ```cmd
-xcopy minimal-claudeness your-project /E /I /H /Y
+xcopy minimal-claudeness your-project /E /I /H /Y /I
 ```
 </details>
 
