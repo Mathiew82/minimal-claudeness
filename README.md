@@ -137,6 +137,17 @@ Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Fo
 The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
 or `.gitignore` are missing after the copy, use the manual method below.
 
+**Cleanup:**
+
+Once the content is copied, you can safely delete the `minimal-claudeness`
+folder — you no longer need it.
+
+```bash
+rm -rf minimal-claudeness        # Linux / macOS
+rmdir /S /Q minimal-claudeness   # Windows (CMD)
+Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
+```
+
 **Manual (any OS):**
 
 After Step 2, open the `minimal-claudeness` folder in your file explorer
