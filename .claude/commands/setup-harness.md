@@ -4,6 +4,14 @@ description: Configure the meta-harness for this project.
 
 Configure the meta-harness. Follow these steps EXACTLY.
 
+## Step 0 — Announce
+
+Before doing anything else, tell the user (in their own language):
+
+"⌛ Minimal Claudeness is being configured..."
+
+Then proceed with Step 1.
+
 ## Step 1 — Analyze the project
 
 Scan the project root and key files to understand what this project is.
@@ -79,7 +87,7 @@ lists to reflect what actually exists in `.claude/agents/` and
 
 ---
 
-🚀 Minimal Claudeness has been configured successfully.
+✅ Minimal Claudeness has been configured successfully!
 
 **About the design system:**
 You only need to add the design guide in `DESIGN.md`.
@@ -99,5 +107,5 @@ it's not essential.
 
 **Other places where you can customize:**
 - `.claude/rules/` — Project-specific rules (style, testing, conventions).
-- `.claude/personal-instructions.md` — Your personal preferences (not committed).
+- `.claude/personal-instructions.md` — Your personal preferences (not committed). Add anything you want there.
 

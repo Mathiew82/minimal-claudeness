@@ -194,20 +194,22 @@ Once the harness files are in your project, open Claude Code inside it
 and send a simple message. Any message works — the harness activates on
 your first message. `hi harness` is just a friendly convention.
 
-On the first message, Minimal Claudeness will detect that it is not
-configured (`harness-verified.json` says `"verified": false`) and ask:
+On the first message, Minimal Claudeness will automatically detect that
+it is not configured and start the setup. You will see:
 
 ```
-Minimal Claudeness has not been configured yet.
-Do you want to set it up now?
+⌛ Minimal Claudeness is being configured...
 ```
 
-Say yes. Claude will:
+Then it will:
 - Analyze your project.
-- Fill in `PROJECT OVERVIEW` and `STACK` in `CLAUDE.md`.
+- Fill in `PROJECT OVERVIEW` and `STACK` in `CLAUDE.md` (if the project has content).
 - Generate `STRUCTURE.md` from your directory tree.
+- Create `.claude/personal-instructions.md` for you.
 - Mark the harness as verified.
 - Show you what is available.
+
+No confirmation needed. Just open Claude Code and say hi.
 
 ### 3. Work normally
 

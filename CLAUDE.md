@@ -6,17 +6,12 @@ Before answering anything, before processing any request, before reading
 any other section of this file:
 
 1. Read `harness-verified.json` at the project root.
-2. If `verified` is `true`: continue with the user's request.
+2. If `verified` is `true`: continue with the user's request normally.
 3. If `verified` is `false`:
    - STOP. Do not process the user's request yet.
-   - Tell the user, in their own language:
-     "Minimal Claudeness has not been configured yet.
-      Do you want to set it up now?"
-   - Wait for their answer.
-   - If the user agrees (any affirmative response): execute `/setup-harness`.
-   - If the user declines (any negative response): continue with their request,
-     but remind them once at the end that Minimal Claudeness is unconfigured.
-   - If the answer is unclear, ask again.
+   - Execute `/setup-harness` immediately.
+   - Do not ask the user for permission. Do not wait for confirmation.
+   - After the setup finishes, then continue with the user's original request.
 
 This check takes priority over everything else in this file.
 
