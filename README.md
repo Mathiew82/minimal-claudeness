@@ -91,7 +91,7 @@ your-project/
 
 ## How to install
 
-### 1. Clone it into your project
+### 1. Add Minimal Claudeness to your project
 
 Make sure your project folder already exists before running these commands.
 Replace `your-project` with the actual path to your project.
@@ -99,30 +99,25 @@ Replace `your-project` with the actual path to your project.
 **Linux / macOS:**
 
 ```bash
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-cp -r minimal-claudeness/. your-project/
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
+rsync -av --exclude='.git' minimal-claudeness/ your-project/
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
+Get-ChildItem -Path "minimal-claudeness" -Exclude ".git" -Force | 
+    Copy-Item -Destination "your-project\" -Recurse -Force
 ```
 
-**Windows (CMD):**
+**Alternative (any OS, works everywhere):**
 
-```cmd
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-xcopy minimal-claudeness your-project /E /I /H /Y
-```
-
-**Alternative (works everywhere):**
+Clone the repo, open the folder in your file explorer, and copy the
+files you need manually into your project. Skip the `.git` folder.
 
 ```bash
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-cd minimal-claudeness
-# Copy the files you need manually, or drag and drop in your file explorer.
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
 ```
 
 Or copy only the files you need. It is all plain text.
