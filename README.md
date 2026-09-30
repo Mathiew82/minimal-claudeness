@@ -53,7 +53,7 @@ No Python. No Node. No SQLite. Just files.
 - 📐 **Modular rules** — Code style, conventions, and testing live in their own files, loaded on demand.
 - 🏗️ **Project structure** — A living map of your project, kept up to date.
 - 🎨 **Design system slot** — Drop your design guide in, and Claude respects it.
-- 🚀 **Self-configuring** — First session detects it is unconfigured and offers to set everything up.
+- 🚀 **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
 - 🔒 **Personal overrides** — Keep your own preferences private, never committed.
 
 ---
@@ -101,60 +101,38 @@ your-project/
 ### 1. Add Minimal Claudeness to your project
 
 Make sure your project folder already exists before running these commands.
+These commands only copy the harness files into your project. Your existing
+files (README, LICENSE, .gitignore, etc.) are never overwritten.
 
-**🧎‍♂️‍➡️ Step 1 — Clone the harness:**
+**Step 1 — Clone the harness:**
 
 ```bash
 git clone https://github.com/Mathiew82/minimal-claudeness.git
 ```
 
-**🚶‍♂️‍➡️ Step 2 — Remove its Git history:**
+**Step 2 — Copy the harness files into your project:**
 
-First, enter the cloned folder:
+<details open>
+<summary>Linux / macOS</summary>
 
 ```bash
 cd minimal-claudeness
-```
-
-Then, remove the `.git` folder:
-
-<details open>
-<summary>Linux / macOS</summary>
-
-```bash
-rm -rf .git
-```
-</details>
-
-<details open>
-<summary>Windows (CMD)</summary>
-
-```cmd
-rmdir /S /Q .git
-```
-</details>
-
-<details open>
-<summary>Windows (PowerShell)</summary>
-
-```powershell
-Remove-Item -Path ".git" -Recurse -Force
-```
-</details>
-
-Finally, go back:
-
-```bash
+rsync -av --exclude='.git' --exclude='README.md' --exclude='LICENSE' --exclude='.github' --exclude='.gitignore' . ../your-project/
+cat .gitignore >> ../your-project/.gitignore
 cd ..
 ```
-
-**🏃‍♂️‍➡️ Step 3 — Copy the content into your project:**
+</details>
 
 <details open>
-<summary>Linux / macOS</summary>
+<summary>Windows (PowerShell)</summary>
 
-```bash
-cp -r minimal-claudeness/. your-project/
+```powershell
+cd minimal-claudeness
+$exclude = @('.git', 'README.md', 'LICENSE', '.github', '.gitignore')
+Get-ChildItem -Force | Where-Object { $exclude -notcontains $_.Name } | Copy-Item -Destination "..\your-project\" -Recurse -Force
+if (-not (Test-Path "..\your-project\.gitignore")) { New-Item -Path "..\your-project\.gitignore" -ItemType File -Force }
+Add-Content -Path "..\your-project\.gitignore" -Value (Get-Content ".gitignore")
+cd ..
 ```
 </details>
 
@@ -162,25 +140,19 @@ cp -r minimal-claudeness/. your-project/
 <summary>Windows (CMD)</summary>
 
 ```cmd
-xcopy minimal-claudeness your-project /E /I /H /Y /I
+cd minimal-claudeness
+xcopy .claude ..\your-project\.claude /E /I /H /Y
+xcopy memory ..\your-project\memory /E /I /H /Y
+copy CLAUDE.md ..\your-project\
+if not exist ..\your-project\.gitignore type nul > ..\your-project\.gitignore
+type .gitignore >> ..\your-project\.gitignore
+cd ..
 ```
 </details>
 
-<details open>
-<summary>Windows (PowerShell)</summary>
+**Step 3 — Clean up:**
 
-```powershell
-if (-not (Test-Path -Path "your-project\")) { New-Item -Path "your-project\" -ItemType Directory -Force }
-Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
-```
-</details>
-
-The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
-or `.gitignore` are missing after the copy, use the manual method below.
-
-**Cleanup:**
-
-Once the content is copied, you can safely delete the `minimal-claudeness`
+Once the files are copied, you can safely delete the `minimal-claudeness`
 folder — you no longer need it.
 
 ```bash
@@ -191,10 +163,19 @@ Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 
 **Manual (any OS):**
 
-After Step 2, open the `minimal-claudeness` folder in your file explorer
-and drag everything into your project.
+After Step 1, open the `minimal-claudeness` folder in your file explorer
+and drag only these items into your project:
 
-Or copy only the files you need. It is all plain text.
+- `.claude/` (folder)
+- `memory/` (folder)
+- `CLAUDE.md` (file)
+
+Then manually add these two lines to your project's `.gitignore`:
+
+```
+.claude/personal-instructions.md
+.claude/settings.local.json
+```
 
 ### 2. Activate Minimal Claudeness
 
