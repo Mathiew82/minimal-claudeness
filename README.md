@@ -123,8 +123,12 @@ your-project/
 ### 1. Add Minimal Claudeness to your project
 
 Make sure your project folder already exists before running these commands.
-These commands only copy the harness files into your project. Your existing
-files (README, LICENSE, .gitignore, etc.) are never overwritten.
+These commands copy the harness files into your project. If any file has
+the same name as an existing one, the harness version replaces it — this
+is the expected behavior. Minimal Claudeness comes with its own structure
+and conventions, and files with reserved names (`CLAUDE.md`, `OVERVIEW.md`,
+`STACK.md`, `DESIGN.md`, `STRUCTURE.md`, `harness-verified.json`) are
+managed by the harness.
 
 **Step 1 — Clone the harness:**
 
@@ -139,7 +143,7 @@ git clone https://github.com/Mathiew82/minimal-claudeness.git
 
 ```bash
 cd minimal-claudeness
-rsync -av --ignore-existing --exclude='.git' --exclude='README.md' --exclude='LICENSE' --exclude='.github' --exclude='.gitignore' . ../your-project/
+rsync -av --exclude='.git' --exclude='README.md' --exclude='LICENSE' --exclude='.github' --exclude='.gitignore' . ../your-project/
 cat .gitignore >> ../your-project/.gitignore
 cd ..
 ```
