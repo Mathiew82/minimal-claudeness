@@ -99,28 +99,28 @@ Replace `your-project` with the actual path to your project.
 **Linux / macOS:**
 
 ```bash
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 cp -r minimal-claudeness/. your-project/
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
 
 **Windows (CMD):**
 
 ```cmd
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 xcopy minimal-claudeness your-project /E /I /H /Y
 ```
 
 **Alternative (works everywhere):**
 
 ```bash
-git clone https://github.com/YOUR-USER/minimal-claudeness.git
+git clone https://github.com/Mathiew82/minimal-claudeness.git
 cd minimal-claudeness
 # Copy the files you need manually, or drag and drop in your file explorer.
 ```
