@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "name": "Minimal Claudeness",
+  "repository": "https://github.com/Mathiew82/minimal-claudeness",
+  "harness_files": [
+    "CLAUDE.md",
+    ".claude/agents/code-reviewer.md",
+    ".claude/agents/security-auditor.md",
+    ".claude/agents/qa-engineer.md",
+    ".claude/commands/setup-harness.md",
+    ".claude/commands/find-feature.md",
+    ".claude/commands/compact-features.md",
+    ".claude/commands/review-code.md",
+    ".claude/commands/audit-security.md",
+    ".claude/commands/qa-automation.md",
+    ".claude/rules/features-format.md",
+    ".claude/rules/git.md"
+  ],
+  "user_files": [
+    "OVERVIEW.md",
+    "STACK.md",
+    "DESIGN.md",
+    "STRUCTURE.md",
+    "harness-verified.json",
+    ".claude/settings.json",
+    ".claude/settings.local.json",
+    ".claude/custom-instructions.md",
+    ".claude/personal-instructions.md",
+    ".claude/rules/code-style.md",
+    ".claude/rules/conventions.md",
+    ".claude/rules/testing.md",
+    "memory/FEATURES.md",
+    "memory/FEATURES-HISTORY.md",
+    ".gitignore",
+    "CHECKLIST.md"
+  ],
+  "templates": [
+    "OVERVIEW.md",
+    "STACK.md",
+    "DESIGN.md",
+    "STRUCTURE.md",
+    "harness-verified.json",
+    ".claude/custom-instructions.md",
+    ".claude/personal-instructions.md",
+    ".claude/rules/code-style.md",
+    ".claude/rules/conventions.md",
+    ".claude/rules/testing.md",
+    "memory/FEATURES.md",
+    "memory/FEATURES-HISTORY.md"
+  ]
+}
