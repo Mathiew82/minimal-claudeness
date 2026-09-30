@@ -163,6 +163,7 @@ xcopy minimal-claudeness your-project /E /I /H /Y
 <summary>Windows (PowerShell)</summary>
 
 ```powershell
+if (-not (Test-Path -Path "your-project\")) { New-Item -Path "your-project\" -ItemType Directory -Force }
 Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
 </details>
@@ -176,8 +177,8 @@ Once the content is copied, you can safely delete the `minimal-claudeness`
 folder — you no longer need it.
 
 ```bash
-rm -rf minimal-claudeness        # Linux / macOS
-rmdir /S /Q minimal-claudeness   # Windows (CMD)
+rm -rf minimal-claudeness                               # Linux / macOS
+rmdir /S /Q minimal-claudeness                          # Windows (CMD)
 Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 ```
 
