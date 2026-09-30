@@ -95,44 +95,77 @@ your-project/
 
 Make sure your project folder already exists before running these commands.
 
-**Step 1 — Clone the harness:**
+**🧎‍♂️‍➡️ Step 1 — Clone the harness:**
 
 ```bash
 git clone https://github.com/Mathiew82/minimal-claudeness.git
 ```
 
-**Step 2 — Remove its Git history:**
+**🚶‍♂️‍➡️ Step 2 — Remove its Git history:**
+
+First, enter the cloned folder:
 
 ```bash
 cd minimal-claudeness
 ```
+
+Then, remove the `.git` folder:
+
+<details open>
+<summary>Linux / macOS</summary>
+
 ```bash
-rm -rf .git        # Linux / macOS
+rm -rf .git
 ```
-```bash
-rmdir /S /Q .git   # Windows (CMD)
+</details>
+
+<details open>
+<summary>Windows (CMD)</summary>
+
+```cmd
+rmdir /S /Q .git
 ```
-```bash
-Remove-Item -Path ".git" -Recurse -Force  # Windows (PowerShell)
+</details>
+
+<details open>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+Remove-Item -Path ".git" -Recurse -Force
 ```
+</details>
+
+Finally, go back:
+
 ```bash
 cd ..
 ```
 
-**Step 3 — Copy the content into your project:**
+**🏃‍♂️‍➡️ Step 3 — Copy the content into your project:**
+
+<details open>
+<summary>Linux / macOS</summary>
 
 ```bash
-# Linux / macOS
 cp -r minimal-claudeness/. your-project/
 ```
-```bash
-# Windows (CMD)
+</details>
+
+<details open>
+<summary>Windows (CMD)</summary>
+
+```cmd
 xcopy minimal-claudeness your-project /E /I /H /Y
 ```
-```bash
-# Windows (PowerShell)
+</details>
+
+<details open>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
 Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
+</details>
 
 The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
 or `.gitignore` are missing after the copy, use the manual method below.
