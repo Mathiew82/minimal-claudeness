@@ -127,13 +127,18 @@ cd minimal-claudeness
 
 Or copy only the files you need. It is all plain text.
 
-### 2. Open Claude Code
+### 2. Activate Minimal Claudeness
 
-The first session will detect that Minimal Claudeness is not configured (`harness-verified.json` says `"verified": false`) and ask:
+Once the harness files are in your project, open Claude Code inside it
+and send a simple message. Any message works — the harness activates on
+your first message. `hi harness` is just a friendly convention.
+
+On the first message, Minimal Claudeness will detect that it is not
+configured (`harness-verified.json` says `"verified": false`) and ask:
 
 ```
 Minimal Claudeness has not been configured yet.
-Do you want to set it up now? [Y/n]
+Do you want to set it up now?
 ```
 
 Say yes. Claude will:

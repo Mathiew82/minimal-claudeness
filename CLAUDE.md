@@ -1,23 +1,24 @@
-# BOOTSTRAP CHECK
+# ⚠️ BOOTSTRAP CHECK — READ THIS FIRST
 
-**FIRST ACTION OF EVERY SESSION:**
+**DO NOT RESPOND TO THE USER UNTIL YOU COMPLETE THIS CHECK.**
 
-Read `harness-verified.json` at the project root.
+Before answering anything, before processing any request, before reading
+any other section of this file:
 
-- If `verified` is `true`: continue normally with the user's request.
+1. Read `harness-verified.json` at the project root.
+2. If `verified` is `true`: continue with the user's request.
+3. If `verified` is `false`:
+   - STOP. Do not process the user's request yet.
+   - Tell the user, in their own language:
+     "Minimal Claudeness has not been configured yet.
+      Do you want to set it up now?"
+   - Wait for their answer.
+   - If the user agrees (any affirmative response): execute `/setup-harness`.
+   - If the user declines (any negative response): continue with their request,
+     but remind them once at the end that Minimal Claudeness is unconfigured.
+   - If the answer is unclear, ask again.
 
-- If `verified` is `false`:
-  - STOP. Do not proceed with anything else.
-  - Tell the user, in their own language:
-    "Minimal Claudeness has not been configured yet.
-     Do you want to set it up now? [Y/n]"
-  - Wait for the user's answer.
-  - If the user says yes (Y, y, yes, sí, s, etc.): execute `/setup-harness`.
-  - If the user says no (N, n, no, later, etc.): continue with the user's request,
-    but remind them once at the end that Minimal Claudeness is unconfigured.
-  - If the user does not answer clearly, ask again.
-
-Do NOT skip this check. Do NOT proceed without reading the file first.
+This check takes priority over everything else in this file.
 
 # PROJECT OVERVIEW
 

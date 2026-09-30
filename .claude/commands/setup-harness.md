@@ -33,7 +33,7 @@ Treat the project as **new/empty**. In that case:
   "The project looks new or without enough content or context.
    You have the configuration in your hands. You will just need to add
    information about the project in 'PROJECT OVERVIEW' and 'STACK'
-   in CLAUDE.md."
+   in CLAUDE.md. when you consider it appropriate"
 
 Then skip to Step 4 (do not fill CLAUDE.md or STRUCTURE.md).
 
