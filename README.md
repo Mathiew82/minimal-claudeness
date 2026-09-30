@@ -89,7 +89,8 @@ your-project/
 │   │   ├── code-style.md
 │   │   ├── conventions.md
 │   │   ├── testing.md
-│   │   └── features-format.md
+│   │   ├── features-format.md
+│   │   └── git.md
 │   └── skills/
 │       └── personal-instructions/
 └── memory/
@@ -211,7 +212,7 @@ Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if s
 
 For meaningful features, Claude creates a `feature/<short-name>` branch and a temporary `CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
 
-Every ~100 features, Claude suggests compacting the oldest ones into `FEATURES-HISTORY.md`.
+The active memory never exceeds 100 entries. When a new feature would push the count past 100, the oldest entry is automatically moved to `FEATURES-HISTORY.md`.
 
 ---
 
@@ -245,7 +246,7 @@ Each agent is **read-only**. None of them modify your files. They report, you de
 
 Minimal Claudeness uses two files to track what has been built:
 
-**`memory/FEATURES.md`** — Active memory. The most recent ~100 features. Read by Claude before implementing anything new.
+**`memory/FEATURES.md`** — Active memory. The most recent ~100 features. Read by Claude before implementing anything new. The file has a counter at the top (`**Count: N / 100**`) that tracks how many entries it contains.
 
 Example entry:
 
@@ -282,6 +283,8 @@ The format is defined in `.claude/rules/features-format.md`.
 | `.claude/rules/code-style.md` | Formatting, naming, style rules. |
 | `.claude/rules/conventions.md` | Commits, branches, patterns. |
 | `.claude/rules/testing.md` | Testing framework, structure, commands. |
+| `.claude/rules/features-format.md` | Format for memory entries. |
+| `.claude/rules/git.md` | Commit format, branch naming, co-author rules. |
 | `.claude/personal-instructions.md` | Your personal preferences (gitignored). |
 
 The rules files are empty by default with clear placeholders. Fill them when you need them, not before.
