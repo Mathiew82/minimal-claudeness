@@ -255,7 +255,6 @@ Example entry:
 - **Keywords:** contact, form, smtp, email
 - **Files:** src/pages/Contact.tsx, src/api/mail.ts
 - **Branch:** feature/contact-form-smtp
-- **Status:** completed
 ```
 
 **`memory/FEATURES-HISTORY.md`** — Archive. Older entries, kept forever, read only when you explicitly ask for it (`/find-feature --all`).
