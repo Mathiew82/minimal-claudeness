@@ -17,7 +17,6 @@ Every feature entry must follow this exact format:
     - **Keywords:** keyword1, keyword2, keyword3
     - **Files:** path/to/file1, path/to/file2
     - **Branch:** feature/short-name
-    - **Status:** completed | in-progress | deprecated
 
 Example:
 
@@ -25,7 +24,6 @@ Example:
     - **Keywords:** contact, form, smtp, email
     - **Files:** src/pages/Contact.tsx, src/api/mail.ts
     - **Branch:** feature/contact-form-smtp
-    - **Status:** completed
 
 ## Rules for adding entries
 
