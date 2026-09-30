@@ -1,8 +1,8 @@
 ---
-description: Configure the meta-harness for this project.
+description: Configure Minimal Claudeness for this project.
 ---
 
-Configure the meta-harness. Follow these steps EXACTLY.
+Configure Minimal Claudeness. Follow these steps EXACTLY.
 
 ## Step 0 — Announce
 
@@ -31,7 +31,8 @@ Determine:
 ## Step 2 — Detect if the project is empty or minimal
 
 If you find NO manifest files, NO README, NO meaningful source code,
-or fewer than ~3 files total (excluding the meta-harness files themselves):
+or fewer than ~3 files total (excluding the Minimal Claudeness files
+themselves):
 
 Treat the project as **new/empty**. In that case:
 
@@ -41,7 +42,7 @@ Treat the project as **new/empty**. In that case:
   "The project looks new or without enough content or context.
    You have the configuration in your hands. You will just need to add
    information about the project in 'PROJECT OVERVIEW' and 'STACK'
-   in CLAUDE.md. when you consider it appropriate"
+   in CLAUDE.md, when you consider it appropriate."
 
 Then skip to Step 4 (do not fill CLAUDE.md or STRUCTURE.md).
 
@@ -75,11 +76,60 @@ Rewrite `STRUCTURE.md` with:
 
 Keep it concise. This file is a map, not a book.
 
-## Step 4 — Mark as verified
+## Step 4 — Ensure required files exist
+
+Check the following files and create them if they are missing. Never
+overwrite a file that already exists.
+
+### 4a. `harness-verified.json`
+
+If the file does not exist, create it with:
+
+    {
+      "verified": false
+    }
+
+Do NOT set it to `true` yet. That happens in Step 5.
+
+### 4b. `DESIGN.md`
+
+If the file does not exist, create it with:
+
+    # DESIGN
+
+    <!--
+    Add your design system here: colors, typography, spacing, components.
+    This file is optional. If you have no design yet, leave it as is.
+    -->
+
+### 4c. `STRUCTURE.md`
+
+If the file does not exist (project was empty), create it with:
+
+    # STRUCTURE
+
+    <!--
+    This file will be filled automatically when the project has content.
+    -->
+
+### 4d. `.claude/personal-instructions.md`
+
+If the file does not exist, create it with:
+
+    # PERSONAL INSTRUCTIONS
+
+    <!--
+    Your personal preferences for this project.
+    This file is gitignored and never committed.
+    Add anything here: coding style, communication preferences,
+    local environment notes, reminders for yourself.
+    -->
+
+## Step 5 — Mark as verified
 
 Edit `harness-verified.json` and set `"verified": true`.
 
-## Step 5 — Inform the user
+## Step 6 — Inform the user
 
 Print this message in the user's language. Adjust the agent and command
 lists to reflect what actually exists in `.claude/agents/` and
@@ -97,15 +147,17 @@ it's not essential.
 **Available agents** (invoke them with `@`):
 - `@code-reviewer` — Reviews code for bugs and improvements.
 - `@security-auditor` — Audits code for vulnerabilities.
+- `@qa-engineer` — Runs types, lint, and tests.
 
 **Available commands** (run them with `/`):
-- `/review` — Review code.
-- `/fix-issue` — Fix an issue.
+- `/setup-harness` — Reconfigure Minimal Claudeness.
 - `/find-feature <term>` — Search a feature in memory.
 - `/find-feature --all <term>` — Search also in history.
 - `/compact-features` — Archive old features.
+- `/review-code` — Run the code reviewer.
+- `/audit-security` — Run the security auditor.
+- `/qa-automation` — Run the QA engineer.
 
 **Other places where you can customize:**
 - `.claude/rules/` — Project-specific rules (style, testing, conventions).
 - `.claude/personal-instructions.md` — Your personal preferences (not committed). Add anything you want there.
-
