@@ -14,6 +14,7 @@ Every feature entry must follow this exact format:
     ## YYYY-MM-DD - Short description
     - **Keywords:** keyword1, keyword2, keyword3
     - **Files:** path/to/file1, path/to/file2
+    - **Branch:** feature/short-name
     - **Status:** completed | in-progress | deprecated
 
 Example:
