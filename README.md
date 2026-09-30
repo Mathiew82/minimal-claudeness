@@ -105,9 +105,17 @@ git clone https://github.com/Mathiew82/minimal-claudeness.git
 
 ```bash
 cd minimal-claudeness
+```
+```bash
 rm -rf .git        # Linux / macOS
+```
+```bash
 rmdir /S /Q .git   # Windows (CMD)
+```
+```bash
 Remove-Item -Path ".git" -Recurse -Force  # Windows (PowerShell)
+```
+```bash
 cd ..
 ```
 
@@ -116,10 +124,12 @@ cd ..
 ```bash
 # Linux / macOS
 cp -r minimal-claudeness/. your-project/
-
+```
+```bash
 # Windows (CMD)
 xcopy minimal-claudeness your-project /E /I /H /Y
-
+```
+```bash
 # Windows (PowerShell)
 Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
