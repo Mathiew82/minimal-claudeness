@@ -36,38 +36,38 @@ themselves):
 
 Treat the project as **new/empty**. In that case:
 
-- Do NOT invent content for PROJECT OVERVIEW or STACK.
+- Do NOT invent content for OVERVIEW.md or STACK.md.
 - Leave those sections as they are (with the `...` placeholders).
 - Inform the user in their language:
   "The project looks new or without enough content or context.
    You have the configuration in your hands. You will just need to add
-   information about the project in 'PROJECT OVERVIEW' and 'STACK'
-   in CLAUDE.md, when you consider it appropriate."
+   information about the project in 'OVERVIEW.md' and 'STACK.md'
+   when you consider it appropriate."
 
-Then skip to Step 4 (do not fill CLAUDE.md or STRUCTURE.md).
+Then skip to Step 4 (do not fill OVERVIEW.md or STACK.md).
 
 If the project HAS meaningful content, proceed to Step 3.
 
-## Step 3 — Fill CLAUDE.md and STRUCTURE.md
+## Step 3 — Fill OVERVIEW.md, STACK.md and STRUCTURE.md
 
-### 3a. Fill CLAUDE.md
+### 3a. Fill OVERVIEW.md
 
-Edit `CLAUDE.md` and replace the placeholder `...` in these sections:
+Edit `OVERVIEW.md` and replace the placeholder `...` with 2-4 sentences
+describing what the project is, who it's for, and its main purpose.
+Be concrete, not generic.
 
-- **PROJECT OVERVIEW**: 2-4 sentences describing what the project is,
-  who it's for, and its main purpose. Be concrete, not generic.
-- **STACK**: a clear list of languages, frameworks, versions, and key
-  libraries. Use bullet points. Example:
-  - Language: TypeScript 5.x
-  - Framework: Next.js 14 (App Router)
-  - Database: PostgreSQL via Prisma
-  - Testing: Vitest + Playwright
-  - Package manager: pnpm
+### 3b. Fill STACK.md
 
-Do NOT touch any other section. Do NOT invent information you cannot
-verify from the project files.
+Edit `STACK.md` and replace the placeholder `...` with a clear list of
+languages, frameworks, versions, and key libraries. Use bullet points.
+Example:
+- Language: TypeScript 5.x
+- Framework: Next.js 14 (App Router)
+- Database: PostgreSQL via Prisma
+- Testing: Vitest + Playwright
+- Package manager: pnpm
 
-### 3b. Fill STRUCTURE.md
+### 3c. Fill STRUCTURE.md
 
 Rewrite `STRUCTURE.md` with:
 - A directory tree (2-3 levels deep, skipping `node_modules`, `.git`, `dist`, `build`, etc.).
@@ -75,6 +75,9 @@ Rewrite `STRUCTURE.md` with:
 - Notes on entry points and key files if identifiable.
 
 Keep it concise. This file is a map, not a book.
+
+Do NOT invent information you cannot verify from the project files.
+Do NOT touch `CLAUDE.md`.
 
 ## Step 4 — Ensure required files exist
 
@@ -112,7 +115,32 @@ If the file does not exist (project was empty), create it with:
     This file will be filled automatically when the project has content.
     -->
 
-### 4d. `.claude/personal-instructions.md`
+### 4d. `OVERVIEW.md`
+
+If the file does not exist, create it with:
+
+    # OVERVIEW
+
+    <!--
+    Describe what this project is, who it's for, and its main purpose.
+    Keep it concise.
+    -->
+
+### 4e. `STACK.md`
+
+If the file does not exist, create it with:
+
+    # STACK
+
+    <!--
+    List the languages, frameworks, versions, and key libraries.
+    Example:
+    - Language: TypeScript 5.x
+    - Framework: Next.js 14 (App Router)
+    - Database: PostgreSQL via Prisma
+    -->
+
+### 4f. `.claude/personal-instructions.md`
 
 If the file does not exist, create it with:
 
@@ -125,7 +153,19 @@ If the file does not exist, create it with:
     local environment notes, reminders for yourself.
     -->
 
-### 4e. `.gitignore`
+### 4g. `.claude/custom-instructions.md`
+
+If the file does not exist, create it with:
+
+    # CUSTOM INSTRUCTIONS
+
+    <!--
+    Project-specific instructions that don't fit anywhere else.
+    Add any rule, convention, or note that the agent should always follow
+    in this project. This file is committed and shared with the team.
+    -->
+
+### 4h. `.gitignore`
 
 If `.gitignore` does not exist at the project root, create it. Then
 ensure the following three lines are present. Add any that are missing.
@@ -170,4 +210,5 @@ it's not essential.
 
 **Other places where you can customize:**
 - `.claude/rules/` — Project-specific rules (style, testing, conventions).
-- `.claude/personal-instructions.md` — Your personal preferences (not committed). Add anything you want there.
+- `.claude/custom-instructions.md` — Project-wide custom instructions (committed).
+- `.claude/personal-instructions.md` — Your personal preferences (not committed).
