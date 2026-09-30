@@ -5,13 +5,13 @@
 Before answering anything, before processing any request, before reading
 any other section of this file:
 
-1. Read `harness-verified.json` at the project root.
-2. If `verified` is `true`: continue with the user's request normally.
-3. If `verified` is `false`:
+1. Check if `harness-verified.json` exists at the project root.
+2. If the file does NOT exist, OR if `verified` is `false`:
    - STOP. Do not process the user's request yet.
    - Execute `/setup-harness` immediately.
    - Do not ask the user for permission. Do not wait for confirmation.
-   - After the setup finishes, then continue with the user's original request.
+   - After the setup finishes, continue with the user's original request.
+3. If `verified` is `true`: continue with the user's request normally.
 
 This check takes priority over everything else in this file.
 
