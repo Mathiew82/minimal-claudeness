@@ -139,7 +139,7 @@ git clone https://github.com/Mathiew82/minimal-claudeness.git
 
 ```bash
 cd minimal-claudeness
-rsync -av --exclude='.git' --exclude='README.md' --exclude='LICENSE' --exclude='.github' --exclude='.gitignore' . ../your-project/
+rsync -av --ignore-existing --exclude='.git' --exclude='README.md' --exclude='LICENSE' --exclude='.github' --exclude='.gitignore' . ../your-project/
 cat .gitignore >> ../your-project/.gitignore
 cd ..
 ```
@@ -166,6 +166,11 @@ cd minimal-claudeness
 xcopy .claude ..\your-project\.claude /E /I /H /Y
 xcopy memory ..\your-project\memory /E /I /H /Y
 copy CLAUDE.md ..\your-project\
+copy OVERVIEW.md ..\your-project\
+copy STACK.md ..\your-project\
+copy DESIGN.md ..\your-project\
+copy STRUCTURE.md ..\your-project\
+copy harness-verified.json ..\your-project\
 if not exist ..\your-project\.gitignore type nul > ..\your-project\.gitignore
 type .gitignore >> ..\your-project\.gitignore
 cd ..
@@ -191,6 +196,11 @@ and drag only these items into your project:
 - `.claude/` (folder)
 - `memory/` (folder)
 - `CLAUDE.md` (file)
+- `OVERVIEW.md` (file)
+- `STACK.md` (file)
+- `DESIGN.md` (file)
+- `STRUCTURE.md` (file)
+- `harness-verified.json` (file)
 
 Then manually add these three lines to your project's `.gitignore`:
 
