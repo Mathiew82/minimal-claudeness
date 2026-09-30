@@ -193,7 +193,10 @@ The checklist must follow this exact format:
 2. Follow the format defined in `.claude/rules/features-format.md`.
 3. Use today's date in `YYYY-MM-DD` format.
 4. Include description, keywords, files, branch, and status.
-5. Never delete or edit old entries — only append.
+5. Update the counter at the top of `FEATURES.md` (`**Count: N / 100**`).
+   If the count was already at 100 before appending, first move the
+   oldest entry to `FEATURES-HISTORY.md` (see Maintenance section).
+6. Never delete or edit old entries — only append.
 
 ## When to consult the history
 
