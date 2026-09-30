@@ -4,8 +4,10 @@ Rules for reading and writing the project's feature memory files.
 
 ## Files
 
-- `memory/FEATURES.md` — Active memory. Most recent ~100 entries.
-- `memory/FEATURES-HISTORY.md` — Archived entries. Only read with `--all`.
+- `memory/FEATURES.md` — Active memory. Has a `**Count: N / 100**` counter
+  at the top. Read most recent ~100 entries.
+- `memory/FEATURES-HISTORY.md` — Archived entries. Has a `**Count: N**`
+  counter at the top. Only read with `--all`.
 
 ## Entry format
 
@@ -22,6 +24,7 @@ Example:
     ## 2024-05-10 - Contact page with form
     - **Keywords:** contact, form, smtp, email
     - **Files:** src/pages/Contact.tsx, src/api/mail.ts
+    - **Branch:** feature/contact-form-smtp
     - **Status:** completed
 
 ## Rules for adding entries
@@ -32,11 +35,14 @@ Example:
 4. Files must be relative paths from the project root.
 5. If a feature modifies an existing one, create a NEW entry referencing it.
 6. Never delete or edit old entries — only append.
-7. When `FEATURES.md` exceeds 100 entries, suggest running `/compact-features`.
-8. Always include the branch name where the feature was developed.
+7. Always include the branch name where the feature was developed.
+8. Update the counter at the top of the file after appending.
 
 ## Rules for history
 
-1. `FEATURES-HISTORY.md` is populated ONLY by `/compact-features`.
+1. `FEATURES-HISTORY.md` is populated by the automatic maintenance rule
+   (see `CLAUDE.md` → MEMORY PROTOCOL → Maintenance) or by the
+   `/compact-features` command.
 2. Never edit or delete entries in the history manually.
 3. Preserve chronological order (oldest first).
+4. Update the counter at the top of the history file after appending.
