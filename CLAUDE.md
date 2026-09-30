@@ -205,9 +205,29 @@ Only read it when:
 
 ## Maintenance
 
-- When `memory/FEATURES.md` exceeds 100 entries, suggest running
-  `/compact-features` to archive the oldest entries to `FEATURES-HISTORY.md`.
-- Never trigger compaction automatically. Always ask the user first.
+`memory/FEATURES.md` has a counter at the top: `**Count: N / 100**`.
+
+### When appending a new entry
+
+1. Read the counter in `FEATURES.md`.
+2. If `N < 100`:
+   - Append the new entry.
+   - Update the counter to `N + 1`.
+3. If `N == 100`:
+   - Move the OLDEST entry from `FEATURES.md` to the END of
+     `FEATURES-HISTORY.md`.
+   - Update the history counter (`**Count: M**` → `M + 1`).
+   - Append the new entry to `FEATURES.md`.
+   - Keep the counter at `100 / 100`.
+
+Never let `FEATURES.md` exceed 100 entries. The counter must always
+reflect the real number of entries below.
+
+### Manual compaction
+
+The user can still run `/compact-features` at any time to force a
+bulk archive (e.g., moving the oldest 20 at once). This is optional;
+the automatic rule above keeps the memory healthy without manual work.
 
 ## Available commands
 
