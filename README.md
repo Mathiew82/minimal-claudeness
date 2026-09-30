@@ -89,13 +89,40 @@ your-project/
 
 ---
 
-## How it works
+## How to install
 
 ### 1. Clone it into your project
+
+Make sure your project folder already exists before running these commands.
+Replace `your-project` with the actual path to your project.
+
+**Linux / macOS:**
 
 ```bash
 git clone https://github.com/YOUR-USER/minimal-claudeness.git
 cp -r minimal-claudeness/. your-project/
+```
+
+**Windows (PowerShell):**
+
+```powershell
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
+Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
+```
+
+**Windows (CMD):**
+
+```cmd
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
+xcopy minimal-claudeness your-project /E /I /H /Y
+```
+
+**Alternative (works everywhere):**
+
+```bash
+git clone https://github.com/YOUR-USER/minimal-claudeness.git
+cd minimal-claudeness
+# Copy the files you need manually, or drag and drop in your file explorer.
 ```
 
 Or copy only the files you need. It is all plain text.
