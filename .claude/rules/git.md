@@ -4,12 +4,7 @@ Rules for commits, branches, and Git hygiene in this project.
 
 ## Commits
 
-- Always use **Conventional Commits** format.
-- Always write the commit message in **one line**.
-- Always write the commit message in **English**.
-- NEVER add a `Co-Authored-By:` line. No exceptions.
-  Do NOT add `Co-Authored-By: Claude <noreply@anthropic.com>` or any
-  variation. The commit must have only the user as author.
+Always use **Conventional Commits** format, in **one line**, in **English**.
 
 ### Format
 
@@ -41,14 +36,14 @@ Rules for commits, branches, and Git hygiene in this project.
 3. Do NOT end the subject with a period.
 4. Do NOT add a body unless strictly necessary. One line is the default.
 
-## Branches
-
-- Feature branches use the pattern `feature/<short-kebab-description>`.
-- See `CLAUDE.md` → MEMORY PROTOCOL → Branch per feature for the full workflow.
-- Never work directly on `main` or `master` for features.
-
 ## Co-Authored-By
 
-Never add co-author trailers to commits. The commit must only list
-the user as author. This applies to all commits, regardless of how
-much the agent contributed.
+**NEVER** add a `Co-Authored-By:` trailer to any commit. No exceptions.
+
+Do NOT add `Co-Authored-By: Claude <noreply@anthropic.com>`, or any other
+variation, regardless of how much the agent contributed. The commit must
+list only the user as author.
+
+## Branches
+
+See `CLAUDE.md` → MEMORY PROTOCOL → Branch per feature.
