@@ -2,9 +2,19 @@
   <img src=".github/images/logo-min.png" alt="Minimal Claudeness" width="300">
 </p>
 
-# Minimal Claudeness
+<h1 align="center">Minimal Claudeness</h1>
 
-> The essence of working with Claude Code. No dependencies, no noise, no bloat.
+<p align="center">
+  <em>The essence of working with Claude Code. No dependencies, no noise, no bloat.</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
+  <img src="https://img.shields.io/badge/Claude%20Code-ready-purple" alt="Claude Code">
+  <img src="https://img.shields.io/badge/dependencies-zero-success" alt="Zero dependencies">
+</p>
+
+---
 
 A minimal, dependency-free meta-harness for [Claude Code](https://claude.com/claude-code) that gives your projects **structure, memory, and focused subagents** — the things you actually need, and nothing more.
 
@@ -17,6 +27,15 @@ Every time you start a new project with Claude, you repeat the same context. Eve
 **Minimal Claudeness fixes that.** One harness, cloned into any project, that bootstraps itself, remembers what you have built, and keeps Claude focused.
 
 No Python. No Node. No SQLite. Just files.
+
+---
+
+## Who is this for
+
+- Solo developers who want structure without ceremony.
+- Small teams who need shared context and memory.
+- Non-programmers building apps with Claude and tired of repeating themselves.
+- Anyone who has ever asked Claude "did we already build this?"
 
 ---
 
@@ -83,10 +102,10 @@ Or copy only the files you need. It is all plain text.
 
 ### 2. Open Claude Code
 
-The first session will detect that the harness is not configured (`harness-verified.json` says `"verified": false`) and ask:
+The first session will detect that Minimal Claudeness is not configured (`harness-verified.json` says `"verified": false`) and ask:
 
 ```
-The meta-harness has not been configured yet.
+Minimal Claudeness has not been configured yet.
 Do you want to set it up now? [Y/n]
 ```
 
@@ -111,7 +130,7 @@ Every ~100 features, it suggests compacting the oldest ones into `FEATURES-HISTO
 
 | Command | What it does |
 |---------|--------------|
-| `/setup-harness` | Configures the harness for a new project. |
+| `/setup-harness` | Configures Minimal Claudeness for a new project. |
 | `/find-feature <term>` | Searches active memory. |
 | `/find-feature --all <term>` | Searches active memory and the archive. |
 | `/compact-features` | Archives the oldest entries to history. |
@@ -205,4 +224,7 @@ If you build something cool with Minimal Claudeness, I want to hear about it.
 
 ---
 
-**Minimal Claudeness** — *The essence of working with Claude Code.*
+<p align="center">
+  <strong>Minimal Claudeness</strong><br>
+  <em>The essence of working with Claude Code.</em>
+</p>
