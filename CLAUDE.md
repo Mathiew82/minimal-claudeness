@@ -46,6 +46,7 @@ Detailed project rules live in `.claude/rules/`:
 - `conventions.md` — Project-wide conventions (commits, branches, patterns).
 - `testing.md` — Testing framework, structure, and commands.
 - `features-format.md` — Format for memory entries.
+- `git.md` — Commit format, branch naming, co-author rules.
 
 Read the relevant file when working on tasks that touch those areas.
 If a file is empty, do not assume rules that are not written there.
