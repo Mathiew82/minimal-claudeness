@@ -91,17 +91,52 @@ When in doubt, ask the user: "Is this a new feature, or a small change?"
    - STOP.
    - Tell the user what you found (date, description, files, status).
    - Ask whether to extend/modify it, reuse it, or create something new.
-4. If nothing similar exists, proceed with implementation.
+4. If nothing similar exists, proceed with the branch and implementation
+   steps described below.
 
 For older work not in active memory, the user can run
 `/find-feature --all <term>` to also search `FEATURES-HISTORY.md`.
+
+## Branch per feature
+
+Every feature (as defined above — not trivial changes) must be developed
+on its own dedicated branch. Do NOT work on the main branch directly.
+
+### Naming convention
+
+Use the pattern: `feature/<short-kebab-description>`
+
+Examples:
+- `feature/contact-form-smtp`
+- `feature/user-authentication`
+- `feature/payment-stripe`
+- `feature/admin-dashboard`
+
+Keep it short, lowercase, hyphenated. No spaces, no uppercase, no underscores.
+
+### Workflow
+
+1. Before implementing a feature:
+   - If currently on `main` or `master`, create the branch:
+     `git checkout -b feature/<short-kebab-description>`
+   - If already on a feature branch for the SAME feature, continue there.
+   - If on a different feature branch, ask the user before switching.
+2. Implement the feature on that branch.
+3. After implementing, register the entry in `memory/FEATURES.md`
+   (including the branch name in the entry — see format rules).
+4. Do NOT push. Let the user decide when to push and open a PR.
+
+### Exception
+
+Small changes (as defined in "What counts as a feature") do NOT
+require a branch. Keep working on the current branch.
 
 ## After implementing a feature
 
 1. Append a new entry at the END of `memory/FEATURES.md`.
 2. Follow the format defined in `.claude/rules/features-format.md`.
 3. Use today's date in `YYYY-MM-DD` format.
-4. Include description, keywords, files, and status.
+4. Include description, keywords, files, branch, and status.
 5. Never delete or edit old entries — only append.
 
 ## When to consult the history
