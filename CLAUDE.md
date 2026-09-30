@@ -15,14 +15,6 @@ any other section of this file:
 
 This check takes priority over everything else in this file.
 
-# PROJECT OVERVIEW
-
-...
-
-# STACK
-
-...
-
 # ARCHITECTURE
 
 Project structure is documented in `STRUCTURE.md`.
@@ -238,6 +230,13 @@ the automatic rule above keeps the memory healthy without manual work.
 - `/find-feature <term>` — Search active memory only.
 - `/find-feature --all <term>` — Search active memory and history.
 - `/compact-features` — Archive oldest entries from active memory to history.
+
+# PROJECT CONTEXT
+@OVERVIEW.md
+@STACK.md
+
+# PROJECT CUSTOM INSTRUCTIONS
+@.claude/custom-instructions.md
 
 # PERSONAL INSTRUCTIONS
 @.claude/personal-instructions.md
