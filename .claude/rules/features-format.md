@@ -33,6 +33,7 @@ Example:
 5. If a feature modifies an existing one, create a NEW entry referencing it.
 6. Never delete or edit old entries — only append.
 7. When `FEATURES.md` exceeds 100 entries, suggest running `/compact-features`.
+8. Always include the branch name where the feature was developed.
 
 ## Rules for history
 
