@@ -95,31 +95,42 @@ your-project/
 
 Make sure your project folder already exists before running these commands.
 
-**Linux / macOS:**
+**Step 1 — Clone the harness:**
 
 ```bash
 git clone https://github.com/Mathiew82/minimal-claudeness.git
+```
+
+**Step 2 — Remove its Git history:**
+
+```bash
+cd minimal-claudeness
+rm -rf .git        # Linux / macOS
+rmdir /S /Q .git   # Windows (CMD)
+Remove-Item -Path ".git" -Recurse -Force  # Windows (PowerShell)
+cd ..
+```
+
+**Step 3 — Copy the content into your project:**
+
+```bash
+# Linux / macOS
 cp -r minimal-claudeness/. your-project/
-rm -rf your-project/.git
+
+# Windows (PowerShell)
+Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
+
+# Windows (CMD)
+xcopy minimal-claudeness your-project /E /I /H /Y
 ```
 
-**Windows (PowerShell):**
-
-```powershell
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-Get-ChildItem -Path "minimal-claudeness" -Exclude ".git" -Force | 
-    Copy-Item -Destination "your-project\" -Recurse -Force
-```
+The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
+or `.gitignore` are missing after the copy, use the manual method below.
 
 **Manual (any OS):**
 
-Clone the repo and copy the files you need manually, skipping `.git`:
-
-```bash
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-```
-
-Then drag and drop everything except `.git` into your project.
+After Step 2, open the `minimal-claudeness` folder in your file explorer
+and drag everything into your project.
 
 Or copy only the files you need. It is all plain text.
 
