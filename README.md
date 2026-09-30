@@ -57,6 +57,7 @@ No Python. No Node. No SQLite. Just files.
 - 🎨 **Design system slot** — Drop your design guide in, and Claude respects it.
 - 🚀 **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
 - 🔒 **Personal overrides** — Keep your own preferences private, never committed.
+- 🧱 **Harness-owned core** — `CLAUDE.md` is infrastructure. It is never edited by the user. Project context lives in `OVERVIEW.md` and `STACK.md`.
 
 ---
 
@@ -64,7 +65,9 @@ No Python. No Node. No SQLite. Just files.
 
 ```
 your-project/
-├── CLAUDE.md                  # Project context and rules (committed)
+├── CLAUDE.md                  # Harness infrastructure (never edit)
+├── OVERVIEW.md                # What the project is (committed)
+├── STACK.md                   # Tech stack (committed)
 ├── DESIGN.md                  # Design system (committed, optional)
 ├── STRUCTURE.md               # Project map (committed)
 ├── harness-verified.json      # Setup state flag
@@ -73,6 +76,7 @@ your-project/
 ├── .claude/
 │   ├── settings.json          # Shared permissions (committed)
 │   ├── settings.local.json    # Personal permissions (gitignored)
+│   ├── custom-instructions.md # Project-wide custom rules (committed)
 │   ├── personal-instructions.md  # Your preferences (gitignored)
 │   ├── agents/
 │   │   ├── code-reviewer.md
@@ -97,6 +101,20 @@ your-project/
     ├── FEATURES.md            # Active memory (last ~100 features)
     └── FEATURES-HISTORY.md    # Archived features
 ```
+
+### What gets committed and what does not
+
+| File | Committed? | Why |
+|------|------------|-----|
+| `CLAUDE.md` | ✅ Yes | Harness infrastructure |
+| `OVERVIEW.md`, `STACK.md` | ✅ Yes | Shared project context |
+| `DESIGN.md`, `STRUCTURE.md` | ✅ Yes | Shared project docs |
+| `.claude/rules/*` | ✅ Yes | Shared project rules |
+| `.claude/custom-instructions.md` | ✅ Yes | Shared project instructions |
+| `.claude/personal-instructions.md` | ❌ No | Personal preferences |
+| `.claude/settings.local.json` | ❌ No | Personal permissions |
+| `CHECKLIST.md` | ❌ No | Temporary, per-feature |
+| `memory/*` | ✅ Yes | Shared feature memory |
 
 ---
 
@@ -197,9 +215,9 @@ it is not configured and start the setup. You will see:
 
 Then it will:
 - Analyze your project.
-- Fill in `PROJECT OVERVIEW` and `STACK` in `CLAUDE.md` (if the project has content).
+- Fill in `OVERVIEW.md` and `STACK.md` (if the project has content).
 - Generate `STRUCTURE.md` from your directory tree.
-- Create `.claude/personal-instructions.md` for you.
+- Create `.claude/personal-instructions.md` and `.claude/custom-instructions.md` for you.
 - Ensure your `.gitignore` has the three required lines.
 - Mark the harness as verified.
 - Show you what is available.
@@ -276,7 +294,8 @@ The format is defined in `.claude/rules/features-format.md`.
 
 | File | What to put in it |
 |------|-------------------|
-| `CLAUDE.md` | Project overview, stack, global conventions. |
+| `OVERVIEW.md` | What the project is, who it's for, its purpose. |
+| `STACK.md` | Languages, frameworks, versions, key libraries. |
 | `DESIGN.md` | Your design system (colors, typography, components). |
 | `STRUCTURE.md` | A map of your project structure. |
 | `.claude/rules/code-style.md` | Formatting, naming, style rules. |
@@ -284,9 +303,19 @@ The format is defined in `.claude/rules/features-format.md`.
 | `.claude/rules/testing.md` | Testing framework, structure, commands. |
 | `.claude/rules/features-format.md` | Format for memory entries. |
 | `.claude/rules/git.md` | Commit format, branch naming, co-author rules. |
+| `.claude/custom-instructions.md` | Project-wide custom instructions (committed). |
 | `.claude/personal-instructions.md` | Your personal preferences (gitignored). |
 
 The rules files are empty by default with clear placeholders. Fill them when you need them, not before.
+
+### What NOT to edit
+
+- **`CLAUDE.md`** — This file is harness infrastructure. It is managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
+- **`harness-verified.json`** — Managed automatically by the setup.
+
+If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
+If you want to add project rules, edit `.claude/rules/` or `.claude/custom-instructions.md`.
+If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
@@ -297,6 +326,7 @@ The rules files are empty by default with clear placeholders. Fill them when you
 - **Explicit over automatic.** You decide when to invoke agents, not the model.
 - **Memory that scales.** Two tiers, archived forever, searchable on demand.
 - **Traceable work.** Every feature has a branch, a memory entry, and (if complex) a checklist.
+- **Clean separation.** Harness files are updated. Project files are yours.
 - **Yours.** Personal instructions stay private, project rules stay shared.
 
 > Claude Code is powerful on its own. Minimal Claudeness just gives it a place to think.
