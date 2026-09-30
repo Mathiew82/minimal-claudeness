@@ -101,12 +101,3 @@ it's not essential.
 - `.claude/rules/` — Project-specific rules (style, testing, conventions).
 - `.claude/personal-instructions.md` — Your personal preferences (not committed).
 
----
-
-## Step 6 — Remind about STRUCTURE.md
-
-Add this final note in the user's language:
-
-"Remember: `STRUCTURE.md` should be kept up to date when the project
-structure changes. You don't need to update it every time, but if you
-add new folders or modules, it's a good idea to reflect it there."

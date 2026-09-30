@@ -33,6 +33,10 @@ This check takes priority over everything else in this file.
 Project structure is documented in `STRUCTURE.md`.
 The design system and UI conventions live in `DESIGN.md`.
 
+Keep `STRUCTURE.md` updated when the project structure changes
+(new folders, new modules, reorganizations). Update it silently as
+part of your normal workflow — no need to ask the user.
+
 # GLOBAL CONVENTIONS
 
 - Always respond in the user's language. If the user writes in Spanish,
