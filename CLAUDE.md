@@ -6,13 +6,15 @@ Read `harness-verified.json` at the project root.
 
 - If `verified` is `true`: continue normally with the user's request.
 
-- If `verified` is `false`: 
+- If `verified` is `false`:
   - STOP. Do not proceed with anything else.
-  - Tell the user:
-    "El meta-harness todavía no ha sido configurado. ¿Quieres que lo configure ahora en un momento? [S/n]"
+  - Tell the user, in their own language:
+    "Minimal Claudeness has not been configured yet.
+     Do you want to set it up now? [Y/n]"
   - Wait for the user's answer.
-  - If the user says yes (S, s, yes, y, etc.): execute `/setup-harness`.
-  - If the user says no (n, no, later, etc.): continue with the user's request but remind them once at the end that the harness is unconfigured.
+  - If the user says yes (Y, y, yes, sí, s, etc.): execute `/setup-harness`.
+  - If the user says no (N, n, no, later, etc.): continue with the user's request,
+    but remind them once at the end that Minimal Claudeness is unconfigured.
   - If the user does not answer clearly, ask again.
 
 Do NOT skip this check. Do NOT proceed without reading the file first.

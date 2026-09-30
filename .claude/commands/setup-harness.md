@@ -79,7 +79,7 @@ lists to reflect what actually exists in `.claude/agents/` and
 
 ---
 
-✅ The project has been configured successfully.
+✅ Minimal Claudeness has been configured successfully.
 
 **About the design system:**
 You only need to add the design guide in `DESIGN.md`.
