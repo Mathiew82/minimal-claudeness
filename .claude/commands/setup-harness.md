@@ -125,6 +125,16 @@ If the file does not exist, create it with:
     local environment notes, reminders for yourself.
     -->
 
+### 4e. `.gitignore`
+
+If `.gitignore` does not exist at the project root, create it. Then
+ensure the following three lines are present. Add any that are missing.
+NEVER remove existing lines.
+
+    .claude/personal-instructions.md
+    .claude/settings.local.json
+    CHECKLIST.md
+
 ## Step 5 — Mark as verified
 
 Edit `harness-verified.json` and set `"verified": true`.
