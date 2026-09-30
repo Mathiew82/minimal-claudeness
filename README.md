@@ -117,11 +117,11 @@ cd ..
 # Linux / macOS
 cp -r minimal-claudeness/. your-project/
 
-# Windows (PowerShell)
-Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
-
 # Windows (CMD)
 xcopy minimal-claudeness your-project /E /I /H /Y
+
+# Windows (PowerShell)
+Copy-Item -Path "minimal-claudeness\*" -Destination "your-project\" -Recurse -Force
 ```
 
 The `cp` and `Copy-Item` commands copy hidden files too. If `.claude/`
