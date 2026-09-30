@@ -131,6 +131,62 @@ Keep it short, lowercase, hyphenated. No spaces, no uppercase, no underscores.
 Small changes (as defined in "What counts as a feature") do NOT
 require a branch. Keep working on the current branch.
 
+## Feature checklist
+
+When starting a feature that has multiple steps or sub-tasks, create a
+temporary `CHECKLIST.md` file at the project root to track progress.
+
+### When to create a checklist
+
+Create a `CHECKLIST.md` when:
+- The feature involves more than 3-4 distinct implementation steps.
+- The feature spans multiple files or modules.
+- The feature has dependencies or sequential steps.
+
+Do NOT create a checklist for small features that can be done in one pass.
+
+### Checklist format
+
+The checklist must follow this exact format:
+
+    # CHECKLIST — <feature short description>
+
+    Branch: feature/<short-kebab-description>
+    Started: YYYY-MM-DD
+
+    ## Tasks
+
+    - [ ] Task 1 description
+    - [ ] Task 2 description
+    - [ ] Task 3 description
+
+    ## Notes
+
+    <!-- Add relevant notes here as you work -->
+
+### Workflow
+
+1. Create `CHECKLIST.md` at the project root before starting the work.
+2. As each task is completed:
+   - Mark it as done in `CHECKLIST.md` (`- [x]`).
+   - If the task represents a meaningful, searchable deliverable
+     (e.g., a new endpoint, a new component, a new service), append a
+     sub-entry to `memory/FEATURES.md` following the format in
+     `.claude/rules/features-format.md`.
+   - Do NOT register trivial sub-tasks (e.g., "renamed a file",
+     "added a helper function").
+3. When ALL tasks are done:
+   - Append a final summary entry to `memory/FEATURES.md` for the feature.
+   - Delete `CHECKLIST.md`.
+   - Inform the user that the feature is complete and the checklist was removed.
+
+### Rules
+
+- Only ONE `CHECKLIST.md` exists at a time. There is one per active feature.
+- If the user asks to work on a different feature while a checklist exists,
+  ask them whether to finish the current one first or abandon it.
+- `CHECKLIST.md` is never committed. It is listed in `.gitignore`.
+
 ## After implementing a feature
 
 1. Append a new entry at the END of `memory/FEATURES.md`.
