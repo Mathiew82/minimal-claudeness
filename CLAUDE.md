@@ -97,13 +97,13 @@ on its own dedicated branch. Do NOT work on the main branch directly.
 
 ### Naming convention
 
-Use the pattern: `feature/<short-kebab-description>`
+Use the pattern: `feat/<short-kebab-description>`
 
 Examples:
-- `feature/contact-form-smtp`
-- `feature/user-authentication`
-- `feature/payment-stripe`
-- `feature/admin-dashboard`
+- `feat/contact-form-smtp`
+- `feat/user-authentication`
+- `feat/payment-stripe`
+- `feat/past-perfect-translations`
 
 Keep it short, lowercase, hyphenated. No spaces, no uppercase, no underscores.
 
@@ -111,13 +111,13 @@ Keep it short, lowercase, hyphenated. No spaces, no uppercase, no underscores.
 
 1. Before implementing a feature:
    - If currently on `main` or `master`, create the branch:
-     `git checkout -b feature/<short-kebab-description>`
+     `git checkout -b feat/<short-kebab-description>`
    - If already on a feature branch for the SAME feature, continue there.
    - If on a different feature branch, ask the user before switching.
 2. Implement the feature on that branch.
-3. After implementing, register the entry in `memory/FEATURES.md`
-   (including the branch name in the entry — see format rules).
-4. Do NOT push. Let the user decide when to push and open a PR.
+3. After implementing, register the entry in `memory/FEATURES.md`.
+4. Do NOT commit, push, or merge. See `.claude/rules/git.md` for the
+   commit and push workflow.
 
 ### Exception
 
@@ -144,7 +144,7 @@ The checklist must follow this exact format:
 
     # CHECKLIST — <feature short description>
 
-    Branch: feature/<short-kebab-description>
+    Branch: feat/<short-kebab-description>
     Started: YYYY-MM-DD
 
     ## Tasks
@@ -185,7 +185,7 @@ The checklist must follow this exact format:
 1. Append a new entry at the END of `memory/FEATURES.md`.
 2. Follow the format defined in `.claude/rules/features-format.md`.
 3. Use today's date in `YYYY-MM-DD` format.
-4. Include description, keywords, files, and branch.
+4. Include description, keywords, and files.
 5. Update the counter at the top of `FEATURES.md` (`**Count: N / 100**`).
    If the count was already at 100 before appending, first move the
    oldest entry to `FEATURES-HISTORY.md` (see Maintenance section).
@@ -232,11 +232,14 @@ the automatic rule above keeps the memory healthy without manual work.
 - `/compact-features` — Archive oldest entries from active memory to history.
 
 # PROJECT CONTEXT
+
 @OVERVIEW.md
 @STACK.md
 
 # PROJECT CUSTOM INSTRUCTIONS
+
 @.claude/custom-instructions.md
 
 # PERSONAL INSTRUCTIONS
+
 @.claude/personal-instructions.md
