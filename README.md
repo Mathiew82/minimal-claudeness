@@ -199,12 +199,12 @@ Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 
 ### Activate
 
-If you already have Claude Code open in this project, run:
+If you installed the harness manually while Claude Code was open,
+close and reopen Claude Code. The new commands are only loaded at
+session start.
 
-    /setup-harness
-
-If Claude Code is not open yet, open it and send any message. The harness
-will detect it is not configured and start the setup automatically.
+Once Claude Code is open again, send any message. The harness will
+detect it is not configured and start the setup automatically.
 
 You will see:
 
