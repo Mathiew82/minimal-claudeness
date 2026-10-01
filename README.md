@@ -136,7 +136,7 @@ your-project/
 The easiest way. Open Claude Code in your project and paste this prompt:
 
 ```
-Install Minimal Claudeness in this project.
+Install Minimal Claudeness in this project, then run /setup-harness.
 Docs: https://github.com/Mathiew82/minimal-claudeness
 ```
 
