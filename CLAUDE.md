@@ -29,7 +29,7 @@ the same task, whenever you:
 - change what a folder is responsible for.
 
 Do NOT update it for extra files inside a folder whose entry already
-covers them (e.g. one more page inside `pages/grammar/`).
+covers them (e.g. one more component inside `components/`).
 
 "Silently" means without asking the user. It does not mean optional.
 
