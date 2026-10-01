@@ -194,10 +194,21 @@ cd ..
 Once the files are copied, you can safely delete the `minimal-claudeness`
 folder — you no longer need it.
 
+<details>
+<summary>Linux / macOS</summary>
+
 ```bash
-rm -rf minimal-claudeness                               # Linux / macOS
-Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
+rm -rf minimal-claudeness
 ```
+</details>
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+Remove-Item -Path "minimal-claudeness" -Recurse -Force
+```
+</details>
 
 ### Activate
 
@@ -210,7 +221,7 @@ detect it is not configured and start the setup automatically.
 
 You will see:
 
-    ⌛ Minimal Claudeness is being configured...
+> ⌛ Minimal Claudeness is being configured...
 
 Then it will:
 - Analyze your project.
