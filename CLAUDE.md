@@ -191,8 +191,8 @@ The checklist must follow this exact format:
 
 ## After implementing a feature
 
-1. If the feature added, removed, or moved files or folders, compare the
-   project tree with STRUCTURE.md and update it (see ARCHITECTURE).
+1. If the feature added, removed, or moved files or folders, check
+   STRUCTURE.md against the criteria in ARCHITECTURE and update it.
 2. Append a new entry at the END of `memory/FEATURES.md`.
 3. Follow the format defined in `.claude/rules/features-format.md`.
 4. Use today's date in `YYYY-MM-DD` format.
