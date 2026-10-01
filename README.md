@@ -345,6 +345,31 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
+## How to uninstall
+
+To remove Minimal Claudeness from a project, delete the following:
+
+- `CLAUDE.md`
+- `OVERVIEW.md`
+- `STACK.md`
+- `DESIGN.md`
+- `STRUCTURE.md`
+- `harness-verified.json`
+- `harness-manifest.json`
+- `CHECKLIST.md` (if present)
+- `.claude/` (entire folder)
+- `memory/` (entire folder)
+
+Then remove these three lines from `.gitignore`:
+
+    .claude/personal-instructions.md
+    .claude/settings.local.json
+    CHECKLIST.md
+
+Your project code and any other files you have created are not affected.
+
+---
+
 ## Philosophy
 
 - **Minimal.** If it is not necessary, it is not here.
