@@ -16,14 +16,12 @@ Every feature entry must follow this exact format:
     ## YYYY-MM-DD - Short description
     - **Keywords:** keyword1, keyword2, keyword3
     - **Files:** path/to/file1, path/to/file2
-    - **Branch:** feature/short-name
 
 Example:
 
     ## 2024-05-10 - Contact page with form
     - **Keywords:** contact, form, smtp, email
     - **Files:** src/pages/Contact.tsx, src/api/mail.ts
-    - **Branch:** feature/contact-form-smtp
 
 ## Rules for adding entries
 
@@ -33,8 +31,7 @@ Example:
 4. Files must be relative paths from the project root.
 5. If a feature modifies an existing one, create a NEW entry referencing it.
 6. Never delete or edit old entries — only append.
-7. Always include the branch name where the feature was developed.
-8. Update the counter at the top of the file after appending.
+7. Update the counter at the top of the file after appending.
 
 ## Rules for history
 
