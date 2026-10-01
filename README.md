@@ -129,7 +129,21 @@ your-project/
 
 ## How to install
 
-### 1. Add Minimal Claudeness to your project
+### Recommended: ask Claude
+
+The easiest way. Open Claude Code in your project and paste this prompt:
+
+```
+Install Minimal Claudeness in this project.
+Docs: https://github.com/Mathiew82/minimal-claudeness
+```
+
+Claude will read the docs, clone the harness, copy the files into your
+project, and run the setup. No manual steps.
+
+### Manual install
+
+If you prefer to do it yourself, follow the steps below.
 
 Make sure your project folder already exists before running these commands.
 These commands copy the harness files into your project. If any file has
@@ -181,7 +195,7 @@ rm -rf minimal-claudeness                               # Linux / macOS
 Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 ```
 
-### 2. Activate Minimal Claudeness
+### Activate
 
 Once the harness files are in your project, open Claude Code inside it
 and send a simple message. Any message works — the harness activates on
@@ -205,7 +219,7 @@ Then it will:
 
 No confirmation needed. Just open Claude Code and say hi.
 
-### 3. Work normally
+### Work normally
 
 Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if something similar already exists. If it does, it stops and asks.
 
@@ -217,15 +231,13 @@ The active memory never exceeds 100 entries. When a new feature would push the c
 
 ## How to update
 
-When a new version of Minimal Claudeness is released, you can update the
-harness files without touching your project files.
+### Recommended: ask Claude
 
-### Ask Claude (recommended)
-
-Open Claude Code and ask:
+The easiest way. Open Claude Code in your project and paste this prompt:
 
 ```
-Update Minimal Claudeness to the latest version.
+Update Minimal Claudeness in this project.
+Docs: https://github.com/Mathiew82/minimal-claudeness
 ```
 
 Claude will follow the instructions in `.claude/commands/update-harness.md`
@@ -237,12 +249,27 @@ If you prefer to do it yourself:
 
 **Step 1 — Clone the latest version:**
 
+<details open>
+<summary>Linux / macOS</summary>
+
 ```bash
 git clone https://github.com/Mathiew82/minimal-claudeness.git
 cd minimal-claudeness
 rm -rf .git
 cd ..
 ```
+</details>
+
+<details open>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+git clone https://github.com/Mathiew82/minimal-claudeness.git
+cd minimal-claudeness
+Remove-Item -Path ".git" -Recurse -Force
+cd ..
+```
+</details>
 
 **Step 2 — Copy only the harness files:**
 
@@ -253,11 +280,70 @@ project. Do NOT copy `OVERVIEW.md`, `STACK.md`, `DESIGN.md`,
 `.claude/rules/testing.md`, `.claude/settings.json`, or anything under
 `memory/`.
 
+<details open>
+<summary>Linux / macOS</summary>
+
+```bash
+cd minimal-claudeness
+rsync -av --exclude='.git' \
+  --exclude='README.md' \
+  --exclude='LICENSE' \
+  --exclude='.github' \
+  --exclude='.gitignore' \
+  --exclude='OVERVIEW.md' \
+  --exclude='STACK.md' \
+  --exclude='DESIGN.md' \
+  --exclude='STRUCTURE.md' \
+  --exclude='.claude/rules/code-style.md' \
+  --exclude='.claude/rules/conventions.md' \
+  --exclude='.claude/rules/testing.md' \
+  --exclude='.claude/settings.json' \
+  --exclude='.claude/personal-instructions.md' \
+  --exclude='.claude/settings.local.json' \
+  --exclude='memory' \
+  --exclude='CHECKLIST.md' \
+  --exclude='harness-verified.json' \
+  . ../your-project/
+cd ..
+```
+</details>
+
+<details open>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+cd minimal-claudeness
+$exclude = @(
+  '.git', 'README.md', 'LICENSE', '.github', '.gitignore',
+  'OVERVIEW.md', 'STACK.md', 'DESIGN.md', 'STRUCTURE.md',
+  'CHECKLIST.md', 'harness-verified.json'
+)
+Get-ChildItem -Force | Where-Object { $exclude -notcontains $_.Name } | Copy-Item -Destination "..\your-project\" -Recurse -Force
+
+# Do NOT copy these from .claude/
+$excludeClaude = @('code-style.md', 'conventions.md', 'testing.md', 'settings.json', 'personal-instructions.md', 'settings.local.json')
+Get-ChildItem -Path ".claude\rules" -Force | Where-Object { $excludeClaude -notcontains $_.Name } | Copy-Item -Destination "..\your-project\.claude\rules\" -Recurse -Force
+cd ..
+```
+</details>
+
 **Step 3 — Clean up:**
+
+<details open>
+<summary>Linux / macOS</summary>
 
 ```bash
 rm -rf minimal-claudeness
 ```
+</details>
+
+<details open>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+Remove-Item -Path "minimal-claudeness" -Recurse -Force
+```
+</details>
 
 **Step 4 — Update the version:**
 
