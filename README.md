@@ -165,7 +165,7 @@ git clone https://github.com/Mathiew82/minimal-claudeness.git
 
 **Step 2 — Copy the harness files into your project:**
 
-<details open>
+<details>
 <summary>Linux / macOS</summary>
 
 ```bash
@@ -176,7 +176,7 @@ cd ..
 ```
 </details>
 
-<details open>
+<details>
 <summary>Windows (PowerShell)</summary>
 
 ```powershell
