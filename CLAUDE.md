@@ -20,9 +20,18 @@ This check takes priority over everything else in this file.
 Project structure is documented in `STRUCTURE.md`.
 The design system and UI conventions live in `DESIGN.md`.
 
-Keep `STRUCTURE.md` updated when the project structure changes
-(new folders, new modules, reorganizations). Update it silently as
-part of your normal workflow — no need to ask the user.
+## Keeping STRUCTURE.md up to date
+
+STRUCTURE.md is a map of the project. Update it, silently and as part of
+the same task, whenever you:
+- create, delete, rename, or move a folder;
+- add a new top-level module, route group, plugin, store, or entry point;
+- change what a folder is responsible for.
+
+Do NOT update it for extra files inside a folder whose entry already
+covers them (e.g. one more page inside `pages/grammar/`).
+
+"Silently" means without asking the user. It does not mean optional.
 
 # GLOBAL CONVENTIONS
 
