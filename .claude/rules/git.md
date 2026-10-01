@@ -47,3 +47,19 @@ list only the user as author.
 ## Branches
 
 See `CLAUDE.md` → MEMORY PROTOCOL → Branch per feature.
+
+Naming pattern: `feat/<short-kebab-description>`
+
+Examples:
+- `feat/contact-form-smtp`
+- `feat/user-authentication`
+- `feat/past-perfect-translations`
+
+## Commit and push workflow
+
+1. Whenever you finish a task, ask the user whether they want to commit
+   and push the changes. Do not commit or push until they confirm.
+2. When a feature is finished, suggest to the user: commit, push, merge
+   the feature branch into `main`, and delete the feature branch (local
+   and remote) so no dead branches are left behind. Do none of it until
+   they confirm.
