@@ -57,9 +57,13 @@ Examples:
 
 ## Commit and push workflow
 
-1. Whenever you finish a task, ask the user whether they want to commit
+1. Before suggesting a commit (steps 2 and 3 below), if the work added,
+   removed, or moved files or folders, check that STRUCTURE.md reflects
+   it, following the criteria in `CLAUDE.md` → ARCHITECTURE. If it does
+   not, update it first.
+2. Whenever you finish a task, ask the user whether they want to commit
    and push the changes. Do not commit or push until they confirm.
-2. When a feature is finished, suggest to the user: commit, push, merge
+3. When a feature is finished, suggest to the user: commit, push, merge
    the feature branch into `main`, and delete the feature branch (local
    and remote) so no dead branches are left behind. Do none of it until
    they confirm.
