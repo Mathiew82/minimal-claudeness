@@ -14,6 +14,14 @@
   <img src="https://img.shields.io/badge/dependencies-zero-success" alt="Zero dependencies">
 </p>
 
+<p align="center">
+  <a href="#how-to-install"><strong>Install</strong></a> ·
+  <a href="#how-to-update"><strong>Update</strong></a> ·
+  <a href="#commands"><strong>Commands</strong></a> ·
+  <a href="#agents"><strong>Agents</strong></a> ·
+  <a href="#the-memory-system"><strong>Memory</strong></a>
+</p>
+
 ---
 
 A minimal, dependency-free meta-harness for [Claude Code](https://claude.com/claude-code) that gives your projects **structure, memory, and focused subagents** — the things you actually need, and nothing more.
@@ -71,6 +79,7 @@ your-project/
 ├── DESIGN.md                  # Design system (committed, optional)
 ├── STRUCTURE.md               # Project map (committed)
 ├── harness-verified.json      # Setup state flag
+├── harness-manifest.json      # Harness version and file list
 ├── CHECKLIST.md               # Temporary, per-feature (gitignored)
 ├── .gitignore                 # Excludes personal files
 ├── .claude/
@@ -127,8 +136,8 @@ These commands copy the harness files into your project. If any file has
 the same name as an existing one, the harness version replaces it — this
 is the expected behavior. Minimal Claudeness comes with its own structure
 and conventions, and files with reserved names (`CLAUDE.md`, `OVERVIEW.md`,
-`STACK.md`, `DESIGN.md`, `STRUCTURE.md`, `harness-verified.json`) are
-managed by the harness.
+`STACK.md`, `DESIGN.md`, `STRUCTURE.md`, `harness-verified.json`,
+`harness-manifest.json`) are managed by the harness.
 
 **Step 1 — Clone the harness:**
 
@@ -162,25 +171,6 @@ cd ..
 ```
 </details>
 
-<details open>
-<summary>Windows (CMD)</summary>
-
-```cmd
-cd minimal-claudeness
-xcopy .claude ..\your-project\.claude /E /I /H /Y
-xcopy memory ..\your-project\memory /E /I /H /Y
-copy CLAUDE.md ..\your-project\
-copy OVERVIEW.md ..\your-project\
-copy STACK.md ..\your-project\
-copy DESIGN.md ..\your-project\
-copy STRUCTURE.md ..\your-project\
-copy harness-verified.json ..\your-project\
-if not exist ..\your-project\.gitignore type nul > ..\your-project\.gitignore
-type .gitignore >> ..\your-project\.gitignore
-cd ..
-```
-</details>
-
 **Step 3 — Clean up:**
 
 Once the files are copied, you can safely delete the `minimal-claudeness`
@@ -188,30 +178,7 @@ folder — you no longer need it.
 
 ```bash
 rm -rf minimal-claudeness                               # Linux / macOS
-rmdir /S /Q minimal-claudeness                          # Windows (CMD)
 Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
-```
-
-**Manual (any OS):**
-
-After Step 1, open the `minimal-claudeness` folder in your file explorer
-and drag only these items into your project:
-
-- `.claude/` (folder)
-- `memory/` (folder)
-- `CLAUDE.md` (file)
-- `OVERVIEW.md` (file)
-- `STACK.md` (file)
-- `DESIGN.md` (file)
-- `STRUCTURE.md` (file)
-- `harness-verified.json` (file)
-
-Then manually add these three lines to your project's `.gitignore`:
-
-```
-.claude/personal-instructions.md
-.claude/settings.local.json
-CHECKLIST.md
 ```
 
 ### 2. Activate Minimal Claudeness
@@ -248,11 +215,63 @@ The active memory never exceeds 100 entries. When a new feature would push the c
 
 ---
 
+## How to update
+
+When a new version of Minimal Claudeness is released, you can update the
+harness files without touching your project files.
+
+### Ask Claude (recommended)
+
+Open Claude Code and ask:
+
+```
+Update Minimal Claudeness to the latest version.
+```
+
+Claude will follow the instructions in `.claude/commands/update-harness.md`
+and handle the update for you.
+
+### Manual update
+
+If you prefer to do it yourself:
+
+**Step 1 — Clone the latest version:**
+
+```bash
+git clone https://github.com/Mathiew82/minimal-claudeness.git
+cd minimal-claudeness
+rm -rf .git
+cd ..
+```
+
+**Step 2 — Copy only the harness files:**
+
+The list of harness-owned files is in `harness-manifest.json` under
+`harness_files`. Copy only those files from the fresh clone into your
+project. Do NOT copy `OVERVIEW.md`, `STACK.md`, `DESIGN.md`,
+`STRUCTURE.md`, `.claude/rules/code-style.md`, `.claude/rules/conventions.md`,
+`.claude/rules/testing.md`, `.claude/settings.json`, or anything under
+`memory/`.
+
+**Step 3 — Clean up:**
+
+```bash
+rm -rf minimal-claudeness
+```
+
+**Step 4 — Update the version:**
+
+Edit `harness-manifest.json` and update the `version` field to match the
+new release.
+
+---
+
 ## Commands
 
 | Command | What it does |
 |---------|--------------|
 | `/setup-harness` | Configures Minimal Claudeness for a new project. |
+| `/update-harness` | Updates the harness to the latest version. |
 | `/find-feature <term>` | Searches active memory. |
 | `/find-feature --all <term>` | Searches active memory and the archive. |
 | `/compact-features` | Archives the oldest entries to history. |
@@ -324,8 +343,9 @@ The rules files are empty by default with clear placeholders. Fill them when you
 
 ### What NOT to edit
 
-- **`CLAUDE.md`** — This file is harness infrastructure. It is managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
+- **`CLAUDE.md`** — Harness infrastructure. Managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
 - **`harness-verified.json`** — Managed automatically by the setup.
+- **`harness-manifest.json`** — Updated by the update process.
 
 If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
 If you want to add project rules, edit `.claude/rules/` or `.claude/custom-instructions.md`.
@@ -344,21 +364,6 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 - **Yours.** Personal instructions stay private, project rules stay shared.
 
 > Claude Code is powerful on its own. Minimal Claudeness just gives it a place to think.
-
----
-
-## Requirements
-
-- [Claude Code](https://claude.com/claude-code)
-- Git
-
-That is it.
-
----
-
-## License
-
-MIT — do whatever you want with it.
 
 ---
 
