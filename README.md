@@ -199,16 +199,16 @@ Remove-Item -Path "minimal-claudeness" -Recurse -Force  # Windows (PowerShell)
 
 ### Activate
 
-Once the harness files are in your project, open Claude Code inside it
-and send a simple message. Any message works — the harness activates on
-your first message. `hi harness` is just a friendly convention.
+If you already have Claude Code open in this project, run:
 
-On the first message, Minimal Claudeness will automatically detect that
-it is not configured and start the setup. You will see:
+    /setup-harness
 
-```
-⌛ Minimal Claudeness is being configured...
-```
+If Claude Code is not open yet, open it and send any message. The harness
+will detect it is not configured and start the setup automatically.
+
+You will see:
+
+    ⌛ Minimal Claudeness is being configured...
 
 Then it will:
 - Analyze your project.
