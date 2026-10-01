@@ -66,6 +66,7 @@ No Python. No Node. No SQLite. Just files.
 - 🚀 **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
 - 🔒 **Personal overrides** — Keep your own preferences private, never committed.
 - 🧱 **Harness-owned core** — `CLAUDE.md` is infrastructure. It is never edited by the user. Project context lives in `OVERVIEW.md` and `STACK.md`.
+- 🔄 **One-command update** — Update the harness without touching your project files.
 
 ---
 
@@ -93,6 +94,7 @@ your-project/
 │   │   └── qa-engineer.md
 │   ├── commands/
 │   │   ├── setup-harness.md
+│   │   ├── update-harness.md
 │   │   ├── find-feature.md
 │   │   ├── compact-features.md
 │   │   ├── review-code.md
@@ -231,124 +233,26 @@ The active memory never exceeds 100 entries. When a new feature would push the c
 
 ## How to update
 
-### Recommended: ask Claude
-
-The easiest way. Open Claude Code in your project and paste this prompt:
+Run the update command from Claude Code:
 
 ```
-Update Minimal Claudeness in this project.
+/update-harness
+```
+
+Or, if you prefer to send a prompt:
+
+```
+Run /update-harness to update Minimal Claudeness.
 Docs: https://github.com/Mathiew82/minimal-claudeness
 ```
 
-Claude will follow the instructions in `.claude/commands/update-harness.md`
-and handle the update for you.
+Claude will compare your current version against the latest release,
+show you exactly which files will be updated, ask for confirmation, and
+then apply the update. Your project files (`OVERVIEW.md`, `STACK.md`,
+`DESIGN.md`, `STRUCTURE.md`, `memory/*`, custom rules, personal
+instructions) are never touched.
 
-### Manual update
-
-If you prefer to do it yourself:
-
-**Step 1 — Clone the latest version:**
-
-<details open>
-<summary>Linux / macOS</summary>
-
-```bash
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-cd minimal-claudeness
-rm -rf .git
-cd ..
-```
-</details>
-
-<details open>
-<summary>Windows (PowerShell)</summary>
-
-```powershell
-git clone https://github.com/Mathiew82/minimal-claudeness.git
-cd minimal-claudeness
-Remove-Item -Path ".git" -Recurse -Force
-cd ..
-```
-</details>
-
-**Step 2 — Copy only the harness files:**
-
-The list of harness-owned files is in `harness-manifest.json` under
-`harness_files`. Copy only those files from the fresh clone into your
-project. Do NOT copy `OVERVIEW.md`, `STACK.md`, `DESIGN.md`,
-`STRUCTURE.md`, `.claude/rules/code-style.md`, `.claude/rules/conventions.md`,
-`.claude/rules/testing.md`, `.claude/settings.json`, or anything under
-`memory/`.
-
-<details open>
-<summary>Linux / macOS</summary>
-
-```bash
-cd minimal-claudeness
-rsync -av --exclude='.git' \
-  --exclude='README.md' \
-  --exclude='LICENSE' \
-  --exclude='.github' \
-  --exclude='.gitignore' \
-  --exclude='OVERVIEW.md' \
-  --exclude='STACK.md' \
-  --exclude='DESIGN.md' \
-  --exclude='STRUCTURE.md' \
-  --exclude='.claude/rules/code-style.md' \
-  --exclude='.claude/rules/conventions.md' \
-  --exclude='.claude/rules/testing.md' \
-  --exclude='.claude/settings.json' \
-  --exclude='.claude/personal-instructions.md' \
-  --exclude='.claude/settings.local.json' \
-  --exclude='memory' \
-  --exclude='CHECKLIST.md' \
-  --exclude='harness-verified.json' \
-  . ../your-project/
-cd ..
-```
-</details>
-
-<details open>
-<summary>Windows (PowerShell)</summary>
-
-```powershell
-cd minimal-claudeness
-$exclude = @(
-  '.git', 'README.md', 'LICENSE', '.github', '.gitignore',
-  'OVERVIEW.md', 'STACK.md', 'DESIGN.md', 'STRUCTURE.md',
-  'CHECKLIST.md', 'harness-verified.json'
-)
-Get-ChildItem -Force | Where-Object { $exclude -notcontains $_.Name } | Copy-Item -Destination "..\your-project\" -Recurse -Force
-
-# Do NOT copy these from .claude/
-$excludeClaude = @('code-style.md', 'conventions.md', 'testing.md', 'settings.json', 'personal-instructions.md', 'settings.local.json')
-Get-ChildItem -Path ".claude\rules" -Force | Where-Object { $excludeClaude -notcontains $_.Name } | Copy-Item -Destination "..\your-project\.claude\rules\" -Recurse -Force
-cd ..
-```
-</details>
-
-**Step 3 — Clean up:**
-
-<details open>
-<summary>Linux / macOS</summary>
-
-```bash
-rm -rf minimal-claudeness
-```
-</details>
-
-<details open>
-<summary>Windows (PowerShell)</summary>
-
-```powershell
-Remove-Item -Path "minimal-claudeness" -Recurse -Force
-```
-</details>
-
-**Step 4 — Update the version:**
-
-Edit `harness-manifest.json` and update the `version` field to match the
-new release.
+The list of harness-owned files lives in `harness-manifest.json`.
 
 ---
 
