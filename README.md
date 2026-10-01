@@ -136,8 +136,10 @@ your-project/
 The easiest way. Open Claude Code in your project and paste this prompt:
 
 ```
-Install Minimal Claudeness in this project, then run /setup-harness.
+Install Minimal Claudeness in this project.
 Docs: https://github.com/Mathiew82/minimal-claudeness
+
+When done, tell me to close and reopen Claude Code to activate the harness.
 ```
 
 Claude will read the docs, clone the harness, copy the files into your
