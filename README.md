@@ -126,7 +126,7 @@ your-project/
 
 ---
 
-## How to install
+## 📦 How to install
 
 ### Recommended: ask Claude
 
@@ -246,7 +246,7 @@ The active memory never exceeds 100 entries. When a new feature would push the c
 
 ---
 
-## How to update
+## 🔄 How to update
 
 Run the update command from Claude Code:
 
