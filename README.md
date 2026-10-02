@@ -15,11 +15,11 @@
 </p>
 
 <p align="center">
-  <a href="#how-to-install"><strong>Install</strong></a> ·
-  <a href="#how-to-update"><strong>Update</strong></a> ·
-  <a href="#commands"><strong>Commands</strong></a> ·
-  <a href="#agents"><strong>Agents</strong></a> ·
-  <a href="#the-memory-system"><strong>Memory</strong></a>
+  <a href="#-how-to-install"><strong>Install</strong></a> ·
+  <a href="#-how-to-update"><strong>Update</strong></a> ·
+  <a href="#-commands"><strong>Commands</strong></a> ·
+  <a href="#-agents"><strong>Agents</strong></a> ·
+  <a href="#-the-memory-system"><strong>Memory</strong></a>
 </p>
 
 ---
