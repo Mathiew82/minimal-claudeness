@@ -100,14 +100,12 @@ your-project/
 │   │   ├── review-code.md
 │   │   ├── audit-security.md
 │   │   └── qa-automation.md
-│   ├── rules/
-│   │   ├── code-style.md
-│   │   ├── conventions.md
-│   │   ├── testing.md
-│   │   ├── features-format.md
-│   │   └── git.md
-│   └── skills/
-│       └── personal-instructions/
+│   └── rules/
+│       ├── code-style.md
+│       ├── conventions.md
+│       ├── features-format.md
+│       ├── git.md
+│       └── testing.md
 └── memory/
     ├── FEATURES.md            # Active memory (last ~100 features)
     └── FEATURES-HISTORY.md    # Archived features
