@@ -56,17 +56,17 @@ No Python. No Node. No SQLite. Just files.
 
 ## ✨ What you get
 
-- 🧠 **Two-tier memory** — A searchable ledger of every feature you have built, with automatic archival when it grows.
-- 🌿 **Branch per feature** — Each feature lives on its own branch, keeping `main` clean and the history traceable.
-- 📋 **Temporary checklists** — Complex features get a `CHECKLIST.md` that fills the memory as tasks are completed, then disappears.
-- 🤖 **Focused subagents** — Code reviewer, security auditor, and QA engineer, invoked only when you ask for them.
-- 📐 **Modular rules** — Code style, conventions, and testing live in their own files, loaded on demand.
-- 🏗️ **Project structure** — A living map of your project, kept up to date.
-- 🎨 **Design system slot** — Drop your design guide in, and Claude respects it.
-- 🚀 **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
-- 🔒 **Personal overrides** — Keep your own preferences private, never committed.
-- 🧱 **Harness-owned core** — `CLAUDE.md` is infrastructure. It is never edited by the user. Project context lives in `OVERVIEW.md` and `STACK.md`.
-- 🔄 **One-command update** — Update the harness without touching your project files.
+- **Two-tier memory** — A searchable ledger of every feature you have built, with automatic archival when it grows.
+- **Branch per feature** — Each feature lives on its own branch, keeping `main` clean and the history traceable.
+- **Temporary checklists** — Complex features get a `CHECKLIST.md` that fills the memory as tasks are completed, then disappears.
+- **Focused subagents** — Code reviewer, security auditor, and QA engineer, invoked only when you ask for them.
+- **Modular rules** — Code style, conventions, and testing live in their own files, loaded on demand.
+- **Project structure** — A living map of your project, kept up to date.
+- **Design system slot** — Drop your design guide in, and Claude respects it.
+- **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
+- **Personal overrides** — Keep your own preferences private, never committed.
+- **Harness-owned core** — `CLAUDE.md` is infrastructure. It is never edited by the user. Project context lives in `OVERVIEW.md` and `STACK.md`.
+- **One-command update** — Update the harness without touching your project files.
 
 ---
 
