@@ -291,7 +291,7 @@ Your project code and any other files you have created are not affected.
 
 ---
 
-## ⌨️ Commands
+## 📟 Commands
 
 | Command | What it does |
 |---------|--------------|
