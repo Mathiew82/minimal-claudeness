@@ -81,7 +81,6 @@ your-project/
 ├── STRUCTURE.md               # Project map (committed)
 ├── harness-verified.json      # Setup state flag
 ├── harness-manifest.json      # Harness version and file list
-├── CHECKLIST.md               # Temporary, per-feature (gitignored)
 ├── .gitignore                 # Excludes personal files
 ├── .claude/
 │   ├── settings.json          # Shared permissions (committed)
