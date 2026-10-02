@@ -35,7 +35,7 @@ A minimal, dependency-free meta-harness for [Claude Code](https://claude.com/cla
 
 ---
 
-## Why
+## 🎯 Why
 
 Every time you start a new project with Claude, you repeat the same context. Every session, you re-explain the stack. Every feature, you risk duplicating something you already built three months ago.
 
@@ -45,7 +45,7 @@ No Python. No Node. No SQLite. Just files.
 
 ---
 
-## Who is this for
+## 👥 Who is this for
 
 - Solo developers who want structure without ceremony.
 - Small teams who need shared context and memory.
@@ -54,7 +54,7 @@ No Python. No Node. No SQLite. Just files.
 
 ---
 
-## What you get
+## ✨ What you get
 
 - 🧠 **Two-tier memory** — A searchable ledger of every feature you have built, with automatic archival when it grows.
 - 🌿 **Branch per feature** — Each feature lives on its own branch, keeping `main` clean and the history traceable.
@@ -70,7 +70,7 @@ No Python. No Node. No SQLite. Just files.
 
 ---
 
-## Structure
+## 📁 Structure
 
 ```
 your-project/
@@ -271,7 +271,7 @@ The list of harness-owned files lives in `harness-manifest.json`.
 
 ---
 
-## How to uninstall
+## 🗑️ How to uninstall
 
 To remove Minimal Claudeness from a project, delete the following:
 
@@ -298,7 +298,7 @@ Your project code and any other files you have created are not affected.
 
 ---
 
-## Commands
+## ⌨️ Commands
 
 | Command | What it does |
 |---------|--------------|
@@ -313,7 +313,7 @@ Your project code and any other files you have created are not affected.
 
 ---
 
-## Agents
+## 🤖 Agents
 
 | Agent | Model | When to use |
 |-------|-------|-------------|
@@ -325,7 +325,7 @@ Each agent is **read-only**. None of them modify your files. They report, you de
 
 ---
 
-## The memory system
+## 🧠 The memory system
 
 Minimal Claudeness uses two files to track what has been built:
 
@@ -354,7 +354,7 @@ The format is defined in `.claude/rules/features-format.md`.
 
 ---
 
-## Customization
+## 🎨 Customization
 
 | File | What to put in it |
 |------|-------------------|
@@ -384,7 +384,7 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
-## Philosophy
+## 🧭 Philosophy
 
 - **Minimal.** If it is not necessary, it is not here.
 - **No dependencies.** Pure text, pure Git, pure Claude.
@@ -398,7 +398,7 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Found a bug? Have an idea? Open an issue or a PR.
 
