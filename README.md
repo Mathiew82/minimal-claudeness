@@ -154,12 +154,13 @@ project, and run the setup. No manual steps.
 If you prefer to do it yourself, follow the steps below.
 
 Make sure your project folder already exists before running these commands.
-These commands copy the harness files into your project. If any file has
-the same name as an existing one, the harness version replaces it — this
-is the expected behavior. Minimal Claudeness comes with its own structure
-and conventions, and files with reserved names (`CLAUDE.md`, `OVERVIEW.md`,
-`STACK.md`, `DESIGN.md`, `STRUCTURE.md`, `harness-verified.json`,
-`harness-manifest.json`) are managed by the harness.
+These commands copy the harness files into your project. If you have
+existing files with the same names (`CLAUDE.md`, `OVERVIEW.md`, `STACK.md`,
+`DESIGN.md`, `STRUCTURE.md`, `harness-verified.json`, `harness-manifest.json`,
+or any file inside `.claude/`), resolve the conflict first — decide whether
+to keep yours or let the harness version replace it. Minimal Claudeness
+comes with its own structure and conventions, and files with reserved
+names are managed by the harness.
 
 **Step 1 — Clone the harness:**
 
@@ -242,7 +243,7 @@ No confirmation needed. Just open Claude Code and say hi.
 
 Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if something similar already exists. If it does, it stops and asks.
 
-For meaningful features, Claude creates a `feature/<short-name>` branch and a temporary `CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
+For meaningful features, Claude creates a `feat/<short-name>` branch and a temporary `CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
 
 The active memory never exceeds 100 entries. When a new feature would push the count past 100, the oldest entry is automatically moved to `FEATURES-HISTORY.md`.
 
@@ -270,6 +271,33 @@ then apply the update. Your project files (`OVERVIEW.md`, `STACK.md`,
 instructions) are never touched.
 
 The list of harness-owned files lives in `harness-manifest.json`.
+
+---
+
+## How to uninstall
+
+To remove Minimal Claudeness from a project, delete the following:
+
+- `CLAUDE.md`
+- `OVERVIEW.md`
+- `STACK.md`
+- `DESIGN.md`
+- `STRUCTURE.md`
+- `harness-verified.json`
+- `harness-manifest.json`
+- `CHECKLIST.md` (if present)
+- `.claude/` (entire folder)
+- `memory/` (entire folder)
+
+Then remove these three lines from `.gitignore`:
+
+```
+.claude/personal-instructions.md
+.claude/settings.local.json
+CHECKLIST.md
+```
+
+Your project code and any other files you have created are not affected.
 
 ---
 
@@ -321,10 +349,10 @@ The format is defined in `.claude/rules/features-format.md`.
 ### Feature workflow
 
 1. **Search** — Claude checks `memory/FEATURES.md` for related work.
-2. **Branch** — For meaningful features, Claude creates `feature/<short-name>`.
+2. **Branch** — For meaningful features, Claude creates `feat/<short-name>`.
 3. **Checklist** — For complex features, Claude creates a temporary `CHECKLIST.md`.
 4. **Implement** — Work happens on the branch, checklist updates as tasks complete.
-5. **Record** — Meaningful deliverables are appended to `memory/FEATURES.md` with branch, keywords, and files.
+5. **Record** — Meaningful deliverables are appended to `memory/FEATURES.md` with keywords and files.
 6. **Close** — When done, `CHECKLIST.md` is deleted. The branch is ready for review.
 
 ---
@@ -356,31 +384,6 @@ The rules files are empty by default with clear placeholders. Fill them when you
 If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
 If you want to add project rules, edit `.claude/rules/` or `.claude/custom-instructions.md`.
 If you want personal preferences, edit `.claude/personal-instructions.md`.
-
----
-
-## How to uninstall
-
-To remove Minimal Claudeness from a project, delete the following:
-
-- `CLAUDE.md`
-- `OVERVIEW.md`
-- `STACK.md`
-- `DESIGN.md`
-- `STRUCTURE.md`
-- `harness-verified.json`
-- `harness-manifest.json`
-- `CHECKLIST.md` (if present)
-- `.claude/` (entire folder)
-- `memory/` (entire folder)
-
-Then remove these three lines from `.gitignore`:
-
-    .claude/personal-instructions.md
-    .claude/settings.local.json
-    CHECKLIST.md
-
-Your project code and any other files you have created are not affected.
 
 ---
 
