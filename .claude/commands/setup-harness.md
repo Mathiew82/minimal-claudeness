@@ -173,7 +173,7 @@ NEVER remove existing lines.
 
     .claude/personal-instructions.md
     .claude/settings.local.json
-    CHECKLIST.md
+    memory/CHECKLIST.md
 
 ## Step 5 — Mark as verified
 
