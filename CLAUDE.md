@@ -136,11 +136,11 @@ require a branch. Keep working on the current branch.
 ## Feature checklist
 
 When starting a feature that has multiple steps or sub-tasks, create a
-temporary `CHECKLIST.md` file at the project root to track progress.
+temporary `memory/CHECKLIST.md` file to track progress.
 
 ### When to create a checklist
 
-Create a `CHECKLIST.md` when:
+Create a `memory/CHECKLIST.md` when:
 - The feature involves more than 3-4 distinct implementation steps.
 - The feature spans multiple files or modules.
 - The feature has dependencies or sequential steps.
@@ -168,9 +168,9 @@ The checklist must follow this exact format:
 
 ### Workflow
 
-1. Create `CHECKLIST.md` at the project root before starting the work.
+1. Create `memory/CHECKLIST.md` before starting the work.
 2. As each task is completed:
-   - Mark it as done in `CHECKLIST.md` (`- [x]`).
+   - Mark it as done in `memory/CHECKLIST.md` (`- [x]`).
    - If the task represents a meaningful, searchable deliverable
      (e.g., a new endpoint, a new component, a new service), append a
      sub-entry to `memory/FEATURES.md` following the format in
@@ -179,15 +179,15 @@ The checklist must follow this exact format:
      "added a helper function").
 3. When ALL tasks are done:
    - Append a final summary entry to `memory/FEATURES.md` for the feature.
-   - Delete `CHECKLIST.md`.
+   - Delete `memory/CHECKLIST.md`.
    - Inform the user that the feature is complete and the checklist was removed.
 
 ### Rules
 
-- Only ONE `CHECKLIST.md` exists at a time. There is one per active feature.
+- Only ONE `memory/CHECKLIST.md` exists at a time. There is one per active feature.
 - If the user asks to work on a different feature while a checklist exists,
   ask them whether to finish the current one first or abandon it.
-- `CHECKLIST.md` is never committed. It is listed in `.gitignore`.
+- `memory/CHECKLIST.md` is never committed. It is listed in `.gitignore`.
 
 ## After implementing a feature
 
