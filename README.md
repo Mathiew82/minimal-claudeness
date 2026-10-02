@@ -28,13 +28,6 @@ A minimal, dependency-free meta-harness for [Claude Code](https://claude.com/cla
 
 ---
 
-> [!WARNING]
-> **Early development.** Minimal Claudeness is still under active development.
-> Some features may change, break, or behave unexpectedly. Not recommended
-> for production use yet — but feedback, issues, and ideas are very welcome.
-
----
-
 ## 🎯 Why
 
 Every time you start a new project with Claude, you repeat the same context. Every session, you re-explain the stack. Every feature, you risk duplicating something you already built three months ago.
