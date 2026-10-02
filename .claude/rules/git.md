@@ -57,13 +57,28 @@ Examples:
 
 ## Commit and push workflow
 
+This workflow applies to EVERY change, regardless of size — a one-line
+fix, a copy edit, or a full feature. The feature/small-change distinction
+in `CLAUDE.md` → MEMORY PROTOCOL only affects branching and memory
+entries, it never changes this step.
+
 1. Before suggesting a commit (steps 2 and 3 below), if the work added,
-   removed, or moved files or folders, check that STRUCTURE.md reflects
+   removed, or moved files or folders, check that `STRUCTURE.md` reflects
    it, following the criteria in `CLAUDE.md` → ARCHITECTURE. If it does
    not, update it first.
-2. Whenever you finish a task, ask the user whether they want to commit
-   and push the changes. Do not commit or push until they confirm.
-3. When a feature is finished, suggest to the user: commit, push, merge
-   the feature branch into `main`, and delete the feature branch (local
-   and remote) so no dead branches are left behind. Do none of it until
-   they confirm.
+
+2. Whenever you finish a task — including small fixes, copy edits, or
+   config tweaks, not just features — ask the user whether they want to
+   commit and push the changes. Do not commit or push until they confirm.
+   Never skip this step because the change was small.
+
+3. When a feature (developed on its own `feat/<...>` branch) is finished,
+   combine everything into a single question. Ask the user:
+
+   "Do you want me to commit, push, merge the feature branch into `main`,
+    and delete the feature branch (local and remote)?"
+
+   Default to doing all four if the user simply confirms. If the user
+   asks for a subset (e.g. merge but not delete the branch, or vice
+   versa), follow exactly what they request. Do none of it until they
+   respond.
