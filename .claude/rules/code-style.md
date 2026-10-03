@@ -1,19 +1,19 @@
 # CODE STYLE
 
-<!--
-Add your project's code style rules here.
+## Formatting
 
-Examples of what belongs in this file:
-- Indentation, quotes, semicolons, trailing commas.
-- Naming conventions for variables, functions, classes, files.
-- Import ordering and grouping.
-- Max line length, comment style.
-- Formatter config (Prettier, ESLint, Black, Ruff, etc.).
+This project uses **Prettier**. Do not format code manually. Let Prettier
+handle indentation, line length, quotes, semicolons, and trailing commas.
+If Prettier is not yet configured in the project, set it up when you first
+need it.
 
-If your project uses an automated formatter, mention it here so the
-agent respects it. Example:
-"This project uses Prettier with the config in `.prettierrc`.
- Never override its rules manually."
--->
+## Comments
 
-<!-- (no rules yet) -->
+Only add comments to code when they are truly necessary or genuinely
+helpful for understanding the context. Avoid them whenever possible,
+which is in the vast majority of cases.
+
+## Naming
+
+No specific naming rules. Follow the conventions already present in the
+codebase. When starting fresh, use clear, descriptive names.
