@@ -396,6 +396,50 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
+## 🔄 How it works
+
+```mermaid
+flowchart TD
+    A([📱 Open Claude Code]) --> B([✍️ Say hi harness])
+    B --> C{🤖 Already configured?}
+    
+    C -- No --> D([⚙️ Auto-setup<br/>Analyzes project<br/>Fills OVERVIEW, STACK<br/>Generates STRUCTURE])
+    C -- Yes --> E([💬 Ask Claude for something])
+    D --> E
+    
+    E --> F{🧭 Feature or small change?}
+    
+    F -- Small change<br/>styling, typo, button --> G([⚡ Direct<br/>No branch, no checklist<br/>no memory entry])
+    
+    F -- Feature<br/>form, service, module --> H([🔍 Search memory<br/>for duplicates])
+    H --> I([🌿 Create feat/branch])
+    I --> J([📝 Implement])
+    J --> K([💾 Register in FEATURES.md])
+    
+    G --> L{❓ Claude asks<br/>commit, push, merge, delete branch?}
+    K --> L
+    
+    L --> M([✅ You decide])
+
+    classDef user fill:#4F46E5,stroke:#312E81,color:#fff,stroke-width:2px
+    classDef decision fill:#F59E0B,stroke:#B45309,color:#fff,stroke-width:2px
+    classDef system fill:#10B981,stroke:#047857,color:#fff,stroke-width:2px
+    classDef quick fill:#6B7280,stroke:#374151,color:#fff,stroke-width:2px
+    classDef memory fill:#8B5CF6,stroke:#6D28D9,color:#fff,stroke-width:2px
+    classDef action fill:#3B82F6,stroke:#1E40AF,color:#fff,stroke-width:2px
+    classDef success fill:#10B981,stroke:#047857,color:#fff,stroke-width:2px
+
+    class A,B,E user
+    class C,F,L decision
+    class D system
+    class G quick
+    class H,I memory
+    class J,K action
+    class M success
+```
+
+---
+
 ## 🤝 Contributing
 
 Found a bug? Have an idea? Open an issue or a PR.
