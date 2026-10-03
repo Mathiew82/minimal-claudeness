@@ -229,6 +229,11 @@ Then it will:
 
 No confirmation needed. Just open Claude Code and say hi.
 
+> **Note:** If your project was empty when you installed the harness,
+> `OVERVIEW.md` and `STACK.md` were left with placeholders. Once you have
+> decided on your stack, ask Claude to fill them in. `STRUCTURE.md` updates
+> itself as you work — you never need to touch it.
+
 ### Work normally
 
 Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if something similar already exists. If it does, it stops and asks.
