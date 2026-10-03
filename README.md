@@ -19,7 +19,8 @@
   <a href="#-how-to-update"><strong>Update</strong></a> ·
   <a href="#-commands"><strong>Commands</strong></a> ·
   <a href="#-agents"><strong>Agents</strong></a> ·
-  <a href="#-the-memory-system"><strong>Memory</strong></a>
+  <a href="#-the-memory-system"><strong>Memory</strong></a> ·
+  <a href="#-how-it-works"><strong>How it works</strong></a>
 </p>
 
 ---
@@ -396,7 +397,7 @@ If you want personal preferences, edit `.claude/personal-instructions.md`.
 
 ---
 
-## 🔄 How it works
+## ♻️ How it works
 
 ```mermaid
 flowchart TD
