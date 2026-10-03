@@ -20,7 +20,7 @@
   <a href="#-commands"><strong>Commands</strong></a> ·
   <a href="#-agents"><strong>Agents</strong></a> ·
   <a href="#-the-memory-system"><strong>Memory</strong></a> ·
-  <a href="#-how-it-works"><strong>How it works</strong></a>
+  <a href="#%EF%B8%8F-how-it-works"><strong>How it works</strong></a>
 </p>
 
 ---
