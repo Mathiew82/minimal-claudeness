@@ -272,28 +272,18 @@ The list of harness-owned files lives in `harness-manifest.json`.
 
 ## 🗑️ How to uninstall
 
-To remove Minimal Claudeness from a project, delete the following:
-
-- `CLAUDE.md`
-- `OVERVIEW.md`
-- `STACK.md`
-- `DESIGN.md`
-- `STRUCTURE.md`
-- `harness-verified.json`
-- `harness-manifest.json`
-- `CHECKLIST.md` (if present)
-- `.claude/` (entire folder)
-- `memory/` (entire folder)
-
-Then remove these three lines from `.gitignore`:
+Ask Claude to remove Minimal Claudeness from the project:
 
 ```
-.claude/personal-instructions.md
-.claude/settings.local.json
-CHECKLIST.md
+Uninstall Minimal Claudeness from this project.
+Ask me before deleting anything that was not created by the harness,
+and leave my project files untouched.
+Docs: https://github.com/Mathiew82/minimal-claudeness
 ```
 
-Your project code and any other files you have created are not affected.
+Claude will go through the harness files one by one, ask you what to do
+when something is ambiguous, and leave anything that belongs to you or
+your project intact.
 
 ---
 
