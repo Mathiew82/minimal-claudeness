@@ -44,7 +44,7 @@ Treat the project as **new/empty**. In that case:
    information about the project in 'OVERVIEW.md' and 'STACK.md'
    when you consider it appropriate."
 
-Then skip to Step 4 (do not fill OVERVIEW.md or STACK.md).
+Then skip to Step 4 (do not fill CLAUDE.md, STRUCTURE.md, or DESIGN.md).
 
 If the project HAS meaningful content, proceed to Step 3.
 
@@ -78,6 +78,47 @@ Keep it concise. This file is a map, not a book.
 
 Do NOT invent information you cannot verify from the project files.
 Do NOT touch `CLAUDE.md`.
+
+### 3d. Fill DESIGN.md
+
+Apply this step ONLY if the project has a user interface (web app, mobile
+app, desktop app). If the project is a backend, CLI, library, or has no
+UI, skip this step entirely and leave `DESIGN.md` as is.
+
+DESIGN.md follows the format spec from
+https://github.com/google-labs-code/design.md. The output must use:
+- YAML front matter with `colors`, `typography`, `rounded`, `spacing`,
+  and `components` tokens.
+- Markdown body with sections in this order: Overview, Colors,
+  Typography, Layout, Elevation & Depth, Shapes, Components,
+  Do's and Don'ts.
+
+Extract tokens from whatever the project uses: CSS variables, Tailwind
+config, theme files, styled-components, design tokens JSON, or inline
+styles. Do NOT invent values. Only document what exists.
+
+#### Cases
+
+1. **The project has no UI.** Skip this step entirely. `DESIGN.md` is
+   left as is.
+
+2. **The project has a UI but no `DESIGN.md`, or it is empty/placeholder.**
+   Analyze the existing design system and fill `DESIGN.md` from scratch
+   following the spec above.
+
+3. **The project has a UI and an existing `DESIGN.md` with real content.**
+   Rewrite `DESIGN.md` to conform to the spec above. Preserve all the
+   real design information from the original file (colors, typography,
+   spacing, components, rationale). Reorganize and reformat it to match
+   the spec. Do NOT lose information.
+
+   Inform the user before rewriting:
+   "Your DESIGN.md has been rewritten to follow the Minimal Claudeness
+    spec (https://github.com/google-labs-code/design.md). Review it to
+    make sure nothing was lost."
+
+   Do NOT ask for permission. Just inform. The harness is the source of
+   truth for the format.
 
 ## Step 4 — Ensure required files exist
 
