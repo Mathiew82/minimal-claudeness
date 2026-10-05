@@ -33,6 +33,24 @@ covers them (e.g. one more component inside `components/`).
 
 "Silently" means without asking the user. It does not mean optional.
 
+## Keeping DESIGN.md up to date
+
+DESIGN.md follows the format spec from
+https://github.com/google-labs-code/design.md.
+
+Update it, silently and as part of the same task, whenever you:
+- add, change, or remove a color, font, spacing, radius, or shadow token;
+- add a new reusable component with its own visual identity;
+- change the visual identity of an existing component;
+- introduce or change a design pattern that other work should follow.
+
+Do NOT update it for:
+- one-off styling of a single element that does not set a precedent;
+- temporary experiments;
+- changes that do not affect the design system.
+
+"Silently" means without asking the user. It does not mean optional.
+
 # GLOBAL CONVENTIONS
 
 - Always respond in the user's language. If the user writes in Spanish,
