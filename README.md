@@ -68,19 +68,19 @@ No Python. No Node. No SQLite. Just files.
 
 ```
 your-project/
-├── CLAUDE.md                  # Harness infrastructure (never edit)
-├── OVERVIEW.md                # What the project is (committed)
-├── STACK.md                   # Tech stack (committed)
-├── DESIGN.md                  # Design system (committed, optional)
-├── STRUCTURE.md               # Project map (committed)
-├── harness-verified.json      # Setup state flag
-├── harness-manifest.json      # Harness version and file list
-├── .gitignore                 # Excludes personal files
+├── CLAUDE.md                       # Harness infrastructure (never edit)
+├── OVERVIEW.md                     # What the project is (committed)
+├── STACK.md                        # Tech stack (committed)
+├── DESIGN.md                       # Design system (committed, optional)
+├── STRUCTURE.md                    # Project map (committed)
+├── harness-verified.json           # Setup state flag
+├── harness-manifest.json           # Harness version and file list
+├── .gitignore                      # Excludes personal files
 ├── .claude/
-│   ├── settings.json          # Shared permissions (committed)
-│   ├── settings.local.json    # Personal permissions (gitignored)
-│   ├── custom-instructions.md # Project-wide custom rules (committed)
-│   ├── personal-instructions.md  # Your preferences (gitignored)
+│   ├── settings.json               # Shared permissions (committed)
+│   ├── settings.local.json         # Personal permissions (gitignored)
+│   ├── custom-instructions.md      # Project-wide custom rules (committed)
+│   ├── personal-instructions.md    # Your preferences (gitignored)
 │   ├── agents/
 │   │   ├── code-reviewer.md
 │   │   ├── security-auditor.md
@@ -100,8 +100,8 @@ your-project/
 │       ├── git.md
 │       └── testing.md
 └── memory/
-    ├── FEATURES.md            # Active memory (last ~100 features)
-    └── FEATURES-HISTORY.md    # Archived features
+    ├── FEATURES.md                 # Active memory (last ~100 features)
+    └── FEATURES-HISTORY.md         # Archived features
 ```
 
 ### What gets committed and what does not
