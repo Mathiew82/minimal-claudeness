@@ -212,7 +212,7 @@ If `.gitignore` does not exist at the project root, create it. Then
 ensure the following three lines are present. Add any that are missing.
 NEVER remove existing lines.
 
-    .claude/personal-instructions.md
+    .claude/user-instructions.md
     .claude/settings.local.json
     memory/CHECKLIST.md
 
