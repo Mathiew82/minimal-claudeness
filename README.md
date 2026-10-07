@@ -102,7 +102,8 @@ your-project/
 │       └── testing.md
 └── memory/
     ├── FEATURES.md                 # Active memory (last ~100 features)
-    └── FEATURES-HISTORY.md         # Archived features
+    ├── FEATURES-HISTORY.md         # Archived features
+    └── CHECKLIST.md                # Temporary, per-feature (gitignored)
 ```
 
 ### What gets committed and what does not
@@ -116,7 +117,7 @@ your-project/
 | `.claude/custom-instructions.md` | ✅ Yes | Shared project instructions |
 | `.claude/user-instructions.md` | ❌ No | Personal preferences |
 | `.claude/settings.local.json` | ❌ No | Personal permissions |
-| `CHECKLIST.md` | ❌ No | Temporary, per-feature |
+| `memory/CHECKLIST.md` | ❌ No | Temporary, per-feature |
 | `memory/*` | ✅ Yes | Shared feature memory |
 
 ---
@@ -224,6 +225,7 @@ Then it will:
 - Analyze your project.
 - Fill in `OVERVIEW.md` and `STACK.md` (if the project has content).
 - Generate `STRUCTURE.md` from your directory tree.
+- Fill in `DESIGN.md` (if the project has a UI).
 - Create `.claude/user-instructions.md` and `.claude/custom-instructions.md` for you.
 - Ensure your `.gitignore` has the three required lines.
 - Mark the harness as verified.
@@ -240,7 +242,7 @@ No confirmation needed. Just open Claude Code and say hi.
 
 Before implementing a feature, Claude reads `memory/FEATURES.md` and checks if something similar already exists. If it does, it stops and asks.
 
-For meaningful features, Claude creates a `feat/<short-name>` branch and a temporary `CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
+For meaningful features, Claude creates a `feat/<short-name>` branch and a temporary `memory/CHECKLIST.md`. As tasks are completed, they are marked in the checklist and summarized into `memory/FEATURES.md`. When the feature is done, the checklist is deleted and the branch is ready for review.
 
 The active memory never exceeds 100 entries. When a new feature would push the count past 100, the oldest entry is automatically moved to `FEATURES-HISTORY.md`.
 
@@ -337,10 +339,10 @@ The format is defined in `.claude/rules/features-format.md`.
 
 1. **Search** — Claude checks `memory/FEATURES.md` for related work.
 2. **Branch** — For meaningful features, Claude creates `feat/<short-name>`.
-3. **Checklist** — For complex features, Claude creates a temporary `CHECKLIST.md`.
+3. **Checklist** — For complex features, Claude creates a temporary `memory/CHECKLIST.md`.
 4. **Implement** — Work happens on the branch, checklist updates as tasks complete.
 5. **Record** — Meaningful deliverables are appended to `memory/FEATURES.md` with keywords and files.
-6. **Close** — When done, `CHECKLIST.md` is deleted. The branch is ready for review.
+6. **Close** — When done, `memory/CHECKLIST.md` is deleted. The branch is ready for review.
 
 ---
 
@@ -397,7 +399,7 @@ flowchart TD
     A([📱 Open Claude Code]) --> B([✍️ Say hi harness])
     B --> C{🤖 Already configured?}
     
-    C -- No --> D([⚙️ Auto-setup<br/>Analyzes project<br/>Fills OVERVIEW, STACK<br/>Generates STRUCTURE])
+    C -- No --> D([⚙️ Auto-setup<br/>Analyzes project<br/>Fills OVERVIEW, STACK, DESIGN<br/>Generates STRUCTURE])
     C -- Yes --> E([💬 Ask Claude for something])
     D --> E
     
