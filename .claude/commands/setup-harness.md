@@ -181,11 +181,11 @@ If the file does not exist, create it with:
     - Database: PostgreSQL via Prisma
     -->
 
-### 4f. `.claude/personal-instructions.md`
+### 4f. `.claude/user-instructions.md`
 
 If the file does not exist, create it with:
 
-    # PERSONAL INSTRUCTIONS
+    # USER INSTRUCTIONS
 
     <!--
     Your personal preferences for this project.
@@ -252,4 +252,4 @@ it's not essential.
 **Other places where you can customize:**
 - `.claude/rules/` — Project-specific rules (style, testing, conventions).
 - `.claude/custom-instructions.md` — Project-wide custom instructions (committed).
-- `.claude/personal-instructions.md` — Your personal preferences (not committed).
+- `.claude/user-instructions.md` — Your personal preferences (not committed).
