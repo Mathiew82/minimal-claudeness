@@ -135,18 +135,7 @@ If the file does not exist, create it with:
 
 Do NOT set it to `true` yet. That happens in Step 5.
 
-### 4b. `DESIGN.md`
-
-If the file does not exist, create it with:
-
-    # DESIGN
-
-    <!--
-    Add your design system here: colors, typography, spacing, components.
-    This file is optional. If you have no design yet, leave it as is.
-    -->
-
-### 4c. `STRUCTURE.md`
+### 4b. `STRUCTURE.md`
 
 If the file does not exist (project was empty), create it with:
 
@@ -156,7 +145,7 @@ If the file does not exist (project was empty), create it with:
     This file will be filled automatically when the project has content.
     -->
 
-### 4d. `OVERVIEW.md`
+### 4c. `OVERVIEW.md`
 
 If the file does not exist, create it with:
 
@@ -167,7 +156,7 @@ If the file does not exist, create it with:
     Keep it concise.
     -->
 
-### 4e. `STACK.md`
+### 4d. `STACK.md`
 
 If the file does not exist, create it with:
 
@@ -181,7 +170,7 @@ If the file does not exist, create it with:
     - Database: PostgreSQL via Prisma
     -->
 
-### 4f. `.claude/user-instructions.md`
+### 4e. `.claude/user-instructions.md`
 
 If the file does not exist, create it with:
 
@@ -194,7 +183,7 @@ If the file does not exist, create it with:
     local environment notes, reminders for yourself.
     -->
 
-### 4g. `.claude/custom-instructions.md`
+### 4f. `.claude/custom-instructions.md`
 
 If the file does not exist, create it with:
 
@@ -206,7 +195,7 @@ If the file does not exist, create it with:
     in this project. This file is committed and shared with the team.
     -->
 
-### 4h. `.gitignore`
+### 4g. `.gitignore`
 
 If `.gitignore` does not exist at the project root, create it. Then
 ensure the following three lines are present. Add any that are missing.
