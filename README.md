@@ -302,6 +302,7 @@ your project intact.
 | `/review-code` | Runs the code reviewer subagent. |
 | `/audit-security` | Runs the security auditor subagent. |
 | `/qa-automation` | Runs the QA engineer subagent. |
+| `/document-project` | Fills or refreshes OVERVIEW, STACK, STRUCTURE, and DESIGN. |
 
 ---
 
