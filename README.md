@@ -10,8 +10,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
-  <img src="https://img.shields.io/badge/Claude%20Code-ready-purple" alt="Claude Code">
-  <img src="https://img.shields.io/badge/dependencies-zero-success" alt="Zero dependencies">
+  <img src="https://img.shields.io/badge/Claude%20Code-ready-slateblue" alt="Claude Code">
+  <img src="https://img.shields.io/badge/dependencies-zero-darkorchid" alt="Zero dependencies">
 </p>
 
 <p align="center">
