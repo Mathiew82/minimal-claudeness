@@ -80,7 +80,7 @@ your-project/
 │   ├── settings.json               # Shared permissions (committed)
 │   ├── settings.local.json         # Personal permissions (gitignored)
 │   ├── custom-instructions.md      # Project-wide custom rules (committed)
-│   ├── personal-instructions.md    # Your preferences (gitignored)
+│   ├── user-instructions.md        # Your preferences (gitignored)
 │   ├── agents/
 │   │   ├── code-reviewer.md
 │   │   ├── security-auditor.md
@@ -114,7 +114,7 @@ your-project/
 | `DESIGN.md`, `STRUCTURE.md` | ✅ Yes | Shared project docs |
 | `.claude/rules/*` | ✅ Yes | Shared project rules |
 | `.claude/custom-instructions.md` | ✅ Yes | Shared project instructions |
-| `.claude/personal-instructions.md` | ❌ No | Personal preferences |
+| `.claude/user-instructions.md` | ❌ No | Personal preferences |
 | `.claude/settings.local.json` | ❌ No | Personal permissions |
 | `CHECKLIST.md` | ❌ No | Temporary, per-feature |
 | `memory/*` | ✅ Yes | Shared feature memory |
@@ -224,7 +224,7 @@ Then it will:
 - Analyze your project.
 - Fill in `OVERVIEW.md` and `STACK.md` (if the project has content).
 - Generate `STRUCTURE.md` from your directory tree.
-- Create `.claude/personal-instructions.md` and `.claude/custom-instructions.md` for you.
+- Create `.claude/user-instructions.md` and `.claude/custom-instructions.md` for you.
 - Ensure your `.gitignore` has the three required lines.
 - Mark the harness as verified.
 - Show you what is available.
@@ -359,7 +359,7 @@ The format is defined in `.claude/rules/features-format.md`.
 | `.claude/rules/git.md` | Harness Git rules (do not edit). |
 | `.claude/rules/custom-git.md` | Your own Git rules (committed, never overwritten). |
 | `.claude/custom-instructions.md` | Project-wide custom instructions (committed). |
-| `.claude/personal-instructions.md` | Your personal preferences (gitignored). |
+| `.claude/user-instructions.md` | Your personal preferences (gitignored). |
 
 The rules files are empty by default with clear placeholders. Fill them when you need them, not before.
 
@@ -372,7 +372,7 @@ The rules files are empty by default with clear placeholders. Fill them when you
 
 If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
 If you want to add project rules, edit `.claude/rules/` or `.claude/custom-instructions.md`.
-If you want personal preferences, edit `.claude/personal-instructions.md`.
+If you want personal preferences, edit `.claude/user-instructions.md`.
 
 ---
 
