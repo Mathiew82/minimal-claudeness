@@ -98,6 +98,7 @@ your-project/
 │       ├── conventions.md
 │       ├── features-format.md
 │       ├── git.md
+│       ├── custom-git.md
 │       └── testing.md
 └── memory/
     ├── FEATURES.md                 # Active memory (last ~100 features)
@@ -355,7 +356,8 @@ The format is defined in `.claude/rules/features-format.md`.
 | `.claude/rules/conventions.md` | Commits, branches, patterns. |
 | `.claude/rules/testing.md` | Testing framework, structure, commands. |
 | `.claude/rules/features-format.md` | Format for memory entries. |
-| `.claude/rules/git.md` | Commit format, branch naming, co-author rules. |
+| `.claude/rules/git.md` | Harness Git rules (do not edit). |
+| `.claude/rules/custom-git.md` | Your own Git rules (committed, never overwritten). |
 | `.claude/custom-instructions.md` | Project-wide custom instructions (committed). |
 | `.claude/personal-instructions.md` | Your personal preferences (gitignored). |
 
@@ -364,6 +366,7 @@ The rules files are empty by default with clear placeholders. Fill them when you
 ### What NOT to edit
 
 - **`CLAUDE.md`** — Harness infrastructure. Managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
+- **`.claude/rules/git.md`** — Harness Git rules. Updated with the harness. Do not edit. For your own rules, use `custom-git.md`.
 - **`harness-verified.json`** — Managed automatically by the setup.
 - **`harness-manifest.json`** — Updated by the update process.
 
