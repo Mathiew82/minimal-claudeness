@@ -82,3 +82,7 @@ entries, it never changes this step.
    asks for a subset (e.g. merge but not delete the branch, or vice
    versa), follow exactly what they request. Do none of it until they
    respond.
+
+# Custom rules
+
+@.claude/rules/custom-git.md
