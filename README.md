@@ -234,9 +234,10 @@ Then it will:
 No confirmation needed. Just open Claude Code and say hi.
 
 > **Note:** If your project was empty when you installed the harness,
-> `OVERVIEW.md` and `STACK.md` were left with placeholders. Once you have
-> decided on your stack, ask Claude to fill them in. `STRUCTURE.md` updates
-> itself as you work — you never need to touch it.
+> `OVERVIEW.md`, `STACK.md`, and `DESIGN.md` were left with placeholders.
+> Once the project has real content, run `/document-project` to fill them
+> in automatically. `STRUCTURE.md` updates itself as you work — you never
+> need to touch it.
 
 ### Work normally
 
