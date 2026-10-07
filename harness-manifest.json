@@ -13,6 +13,7 @@
     ".claude/commands/review-code.md",
     ".claude/commands/audit-security.md",
     ".claude/commands/qa-automation.md",
+    ".claude/commands/document-project.md",
     ".claude/rules/features-format.md",
     ".claude/rules/git.md"
   ],
