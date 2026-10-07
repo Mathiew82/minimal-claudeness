@@ -269,6 +269,6 @@ the automatic rule above keeps the memory healthy without manual work.
 
 @.claude/custom-instructions.md
 
-# PERSONAL INSTRUCTIONS
+# USER INSTRUCTIONS
 
-@.claude/personal-instructions.md
+@.claude/user-instructions.md
