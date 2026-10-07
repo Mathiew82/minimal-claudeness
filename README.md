@@ -94,12 +94,12 @@ your-project/
 │   │   ├── audit-security.md
 │   │   └── qa-automation.md
 │   └── rules/
-│       ├── code-style.md
-│       ├── conventions.md
-│       ├── features-format.md
-│       ├── git.md
-│       ├── custom-git.md
-│       └── testing.md
+│       ├── code-style.md           # Formatting, naming, style rules
+│       ├── conventions.md          # Commits, branches, patterns
+│       ├── features-format.md      # Format for memory entries
+│       ├── git.md                  # Harness Git rules (never edit)
+│       ├── custom-git.md           # Your own Git rules (committed)
+│       └── testing.md              # Testing framework, structure, commands
 └── memory/
     ├── FEATURES.md                 # Active memory (last ~100 features)
     ├── FEATURES-HISTORY.md         # Archived features
