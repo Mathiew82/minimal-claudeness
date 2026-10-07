@@ -82,17 +82,18 @@ your-project/
 │   ├── custom-instructions.md      # Project-wide custom rules (committed)
 │   ├── user-instructions.md        # Your preferences (gitignored)
 │   ├── agents/
-│   │   ├── code-reviewer.md
-│   │   ├── security-auditor.md
-│   │   └── qa-engineer.md
+│   │   ├── code-reviewer.md        # Reviews code for bugs and improvements
+│   │   ├── security-auditor.md     # Audits code for vulnerabilities
+│   │   └── qa-engineer.md          # Runs types, lint, and tests
 │   ├── commands/
-│   │   ├── setup-harness.md
-│   │   ├── update-harness.md
-│   │   ├── find-feature.md
-│   │   ├── compact-features.md
-│   │   ├── review-code.md
-│   │   ├── audit-security.md
-│   │   └── qa-automation.md
+│   │   ├── setup-harness.md        # Configure the harness
+│   │   ├── update-harness.md       # Update the harness
+│   │   ├── document-project.md     # Fill OVERVIEW, STACK, STRUCTURE, DESIGN
+│   │   ├── find-feature.md         # Search active memory
+│   │   ├── compact-features.md     # Archive old features
+│   │   ├── review-code.md          # Run the code reviewer subagent
+│   │   ├── audit-security.md       # Run the security auditor subagent
+│   │   └── qa-automation.md        # Run the QA engineer subagent
 │   └── rules/
 │       ├── code-style.md           # Formatting, naming, style rules
 │       ├── conventions.md          # Commits, branches, patterns
