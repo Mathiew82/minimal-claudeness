@@ -59,15 +59,19 @@ Do NOT update it for:
 
 # PROJECT RULES
 
-Detailed project rules live in `.claude/rules/`:
+Rules are split into two folders:
 
-- `code-style.md` — Formatting, naming, and style rules.
-- `conventions.md` — Project-wide conventions (commits, branches, patterns).
-- `testing.md` — Testing framework, structure, and commands.
-- `features-format.md` — Format for memory entries.
-- `git.md` — Commit format, branch naming, co-author rules.
+- `.claude/rules/harness/` — Harness rules. Do NOT edit these.
+  - `code-style.md` — Formatting, naming, and style rules.
+  - `git.md` — Commit format, branch naming, co-author rules.
+  - `features-format.md` — Format for memory entries.
+- `.claude/rules/user/` — User rules. Edit these as needed.
+  - `code-style.md` — Your own code style rules.
+  - `conventions.md` — Project-wide conventions (commits, branches, patterns).
+  - `testing.md` — Testing framework, structure, and commands.
+  - `git.md` — Your own Git rules.
 
-Read the relevant file when working on tasks that touch those areas.
+Read the relevant files when working on tasks that touch those areas.
 If a file is empty, do not assume rules that are not written there.
 
 # MEMORY PROTOCOL

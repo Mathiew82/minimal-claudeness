@@ -54,7 +54,7 @@ No Python. No Node. No SQLite. Just files.
 - **Branch per feature** — Each feature lives on its own branch, keeping `main` clean and the history traceable.
 - **Temporary checklists** — Complex features get a `CHECKLIST.md` that fills the memory as tasks are completed, then disappears.
 - **Focused subagents** — Code reviewer, security auditor, and QA engineer, invoked only when you ask for them.
-- **Modular rules** — Code style, conventions, and testing live in their own files, loaded on demand.
+- **Modular rules** — Harness rules and user rules live in separate folders, loaded on demand.
 - **Project structure** — A living map of your project, kept up to date.
 - **Design system slot** — Drop your design guide in, and Claude respects it.
 - **Self-configuring** — First session detects it is unconfigured and starts the setup automatically.
@@ -95,13 +95,15 @@ your-project/
 │   │   ├── audit-security.md       # Run the security auditor subagent
 │   │   └── qa-automation.md        # Run the QA engineer subagent
 │   └── rules/
-│       ├── code-style.md           # Harness code style rules (never edit)
-│       ├── custom-code-style.md    # Your own code style rules (committed)
-│       ├── conventions.md          # Your own conventions (committed)
-│       ├── features-format.md      # Format for memory entries
-│       ├── git.md                  # Harness Git rules (never edit)
-│       ├── custom-git.md           # Your own Git rules (committed)
-│       └── testing.md              # Your own testing rules (committed)
+│       ├── harness/                # Harness rules (never edit)
+│       │   ├── code-style.md
+│       │   ├── features-format.md
+│       │   └── git.md
+│       └── user/                   # Your own rules (edit as needed)
+│           ├── code-style.md
+│           ├── conventions.md
+│           ├── git.md
+│           └── testing.md
 └── memory/
     ├── FEATURES.md                 # Active memory (last ~100 features)
     ├── FEATURES-HISTORY.md         # Archived features
@@ -115,7 +117,8 @@ your-project/
 | `CLAUDE.md` | ✅ Yes | Harness infrastructure |
 | `OVERVIEW.md`, `STACK.md` | ✅ Yes | Shared project context |
 | `DESIGN.md`, `STRUCTURE.md` | ✅ Yes | Shared project docs |
-| `.claude/rules/*` | ✅ Yes | Shared project rules |
+| `.claude/rules/harness/*` | ✅ Yes | Harness rules (managed) |
+| `.claude/rules/user/*` | ✅ Yes | Shared user rules |
 | `.claude/custom-instructions.md` | ✅ Yes | Shared project instructions |
 | `.claude/user-instructions.md` | ❌ No | Personal preferences |
 | `.claude/settings.local.json` | ❌ No | Personal permissions |
@@ -275,7 +278,7 @@ Docs: https://github.com/Mathiew82/minimal-claudeness
 Claude will compare your current version against the latest release,
 show you exactly which files will be updated, ask for confirmation, and
 then apply the update. Your project files (`OVERVIEW.md`, `STACK.md`,
-`DESIGN.md`, `STRUCTURE.md`, `memory/*`, custom rules, personal
+`DESIGN.md`, `STRUCTURE.md`, `memory/*`, user rules, personal
 instructions) are never touched.
 
 The list of harness-owned files lives in `harness-manifest.json`.
@@ -343,7 +346,7 @@ Example entry:
 
 **`memory/FEATURES-HISTORY.md`** — Archive. Older entries, kept forever, read only when you explicitly ask for it (`/find-feature --all`).
 
-The format is defined in `.claude/rules/features-format.md`.
+The format is defined in `.claude/rules/harness/features-format.md`.
 
 ### Feature workflow
 
@@ -358,34 +361,38 @@ The format is defined in `.claude/rules/features-format.md`.
 
 ## 🎨 Customization
 
+Rules are split into two folders:
+
+**`.claude/rules/harness/`** — Harness rules. Do not edit these. They are
+updated with the harness.
+
+**`.claude/rules/user/`** — Your own rules. Edit these as needed. They are
+never overwritten by the harness update.
+
 | File | What to put in it |
 |------|-------------------|
 | `OVERVIEW.md` | What the project is, who it's for, its purpose. |
 | `STACK.md` | Languages, frameworks, versions, key libraries. |
 | `DESIGN.md` | Your design system (colors, typography, components). |
 | `STRUCTURE.md` | A map of your project structure. |
-| `.claude/rules/code-style.md` | Harness code style rules (do not edit). |
-| `.claude/rules/custom-code-style.md` | Your own code style rules (committed, never overwritten). |
-| `.claude/rules/conventions.md` | Your own conventions (committed, never overwritten). |
-| `.claude/rules/testing.md` | Your own testing rules (committed, never overwritten). |
-| `.claude/rules/features-format.md` | Format for memory entries. |
-| `.claude/rules/git.md` | Harness Git rules (do not edit). |
-| `.claude/rules/custom-git.md` | Your own Git rules (committed, never overwritten). |
+| `.claude/rules/user/code-style.md` | Your own code style rules. |
+| `.claude/rules/user/conventions.md` | Your own conventions (commits, branches, patterns). |
+| `.claude/rules/user/testing.md` | Your own testing rules. |
+| `.claude/rules/user/git.md` | Your own Git rules. |
 | `.claude/custom-instructions.md` | Project-wide custom instructions (committed). |
 | `.claude/user-instructions.md` | Your personal preferences (gitignored). |
 
-The rules files are empty by default with clear placeholders. Fill them when you need them, not before.
+The user rules files are empty by default with clear placeholders. Fill them when you need them, not before.
 
 ### What NOT to edit
 
-- **`CLAUDE.md`** — Harness infrastructure. Managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
-- **`.claude/rules/code-style.md`** — Harness code style rules. Updated with the harness. Do not edit. For your own rules, use `custom-code-style.md`.
-- **`.claude/rules/git.md`** — Harness Git rules. Updated with the harness. Do not edit. For your own rules, use `custom-git.md`.
+- **`CLAUDE.md`** — Harness infrastructure. Managed by Minimal Claudeness and updated when you update the harness.
+- **`.claude/rules/harness/*`** — Harness rules. Updated with the harness.
 - **`harness-verified.json`** — Managed automatically by the setup.
 - **`harness-manifest.json`** — Updated by the update process.
 
 If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
-If you want to add project rules, edit `.claude/rules/custom-*` or `.claude/custom-instructions.md`.
+If you want to add project rules, edit `.claude/rules/user/` or `.claude/custom-instructions.md`.
 If you want personal preferences, edit `.claude/user-instructions.md`.
 
 ---

@@ -83,6 +83,6 @@ entries, it never changes this step.
    versa), follow exactly what they request. Do none of it until they
    respond.
 
-# Custom rules
+# User rules
 
-@.claude/rules/custom-git.md
+@.claude/rules/user/git.md

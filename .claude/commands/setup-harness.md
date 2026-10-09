@@ -239,6 +239,7 @@ it's not essential.
 - `/qa-automation` — Run the QA engineer.
 
 **Other places where you can customize:**
-- `.claude/rules/` — Project-specific rules (style, testing, conventions).
+- `.claude/rules/user/` — Your own rules (style, testing, conventions, git).
+- `.claude/rules/harness/` — Harness rules. Do not edit.
 - `.claude/custom-instructions.md` — Project-wide custom instructions (committed).
 - `.claude/user-instructions.md` — Your personal preferences (not committed).

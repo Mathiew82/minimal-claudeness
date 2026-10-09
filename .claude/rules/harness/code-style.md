@@ -18,6 +18,6 @@ which is in the vast majority of cases.
 No specific naming rules. Follow the conventions already present in the
 codebase. When starting fresh, use clear, descriptive names.
 
-# Custom rules
+# User rules
 
-@.claude/rules/custom-code-style.md
+@.claude/rules/user/code-style.md
