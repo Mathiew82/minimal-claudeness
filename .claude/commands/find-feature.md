@@ -19,7 +19,7 @@ If the search term is empty, ask the user what to search for and STOP.
 - If scope is `active`: read `memory/FEATURES.md` only.
 - If scope is `all`: read both `memory/FEATURES.md` and `memory/FEATURES-HISTORY.md`.
 
-The entry format is defined in `.claude/rules/features-format.md`.
+The entry format is defined in `.claude/rules/harness/features-format.md`.
 Use it to parse entries correctly.
 
 ## Step 3 — Match
@@ -43,7 +43,6 @@ If matches are found, present them in this format (indented as a block):
     [YYYY-MM-DD] - [Description]
     Keywords: [keywords]
     Files: [files]
-    Status: [status]
     Location: FEATURES.md | FEATURES-HISTORY.md
 
 Sort results by date, most recent first.
