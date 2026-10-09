@@ -4,16 +4,18 @@
   "repository": "https://github.com/Mathiew82/minimal-claudeness",
   "harness_files": [
     "CLAUDE.md",
+    "harness-manifest.json",
     ".claude/agents/code-reviewer.md",
     ".claude/agents/security-auditor.md",
     ".claude/agents/qa-engineer.md",
     ".claude/commands/setup-harness.md",
+    ".claude/commands/update-harness.md",
+    ".claude/commands/document-project.md",
     ".claude/commands/find-feature.md",
     ".claude/commands/compact-features.md",
     ".claude/commands/review-code.md",
     ".claude/commands/audit-security.md",
     ".claude/commands/qa-automation.md",
-    ".claude/commands/document-project.md",
     ".claude/rules/features-format.md",
     ".claude/rules/git.md"
   ],
@@ -30,10 +32,11 @@
     ".claude/rules/code-style.md",
     ".claude/rules/conventions.md",
     ".claude/rules/testing.md",
+    ".claude/rules/custom-git.md",
     "memory/FEATURES.md",
     "memory/FEATURES-HISTORY.md",
-    ".gitignore",
-    "CHECKLIST.md"
+    "memory/CHECKLIST.md",
+    ".gitignore"
   ],
   "templates": [
     "OVERVIEW.md",
@@ -46,6 +49,7 @@
     ".claude/rules/code-style.md",
     ".claude/rules/conventions.md",
     ".claude/rules/testing.md",
+    ".claude/rules/custom-git.md",
     "memory/FEATURES.md",
     "memory/FEATURES-HISTORY.md"
   ]
