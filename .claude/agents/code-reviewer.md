@@ -12,7 +12,7 @@ issues by severity. You do NOT modify files. You do NOT run tests
 ## What you review
 
 - Files modified in the working tree or in the last commit.
-- The rules in `.claude/rules/code-style.md` and `.claude/rules/conventions.md`.
+- The rules in `.claude/rules/harness/code-style.md`, `.claude/rules/user/code-style.md`, and `.claude/rules/user/conventions.md`.
 
 ## What you look for
 
