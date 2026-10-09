@@ -211,14 +211,17 @@ Remove-Item -Path "minimal-claudeness" -Recurse -Force
 
 ### Activate
 
-If you installed the harness manually while Claude Code was open,
-close and reopen Claude Code. The new commands are only loaded at
+After installing the harness (whether via Claude or manually), **close
+and reopen Claude Code**. The new commands and agents are only loaded at
 session start.
 
-Once Claude Code is open again, send any message. The harness will
-detect it is not configured and start the setup automatically.
+Once Claude Code is open again, run:
 
-You will see:
+```
+/setup-harness
+```
+
+This triggers the setup. You will see:
 
 > ⌛ Minimal Claudeness is being configured...
 
@@ -232,7 +235,10 @@ Then it will:
 - Mark the harness as verified.
 - Show you what is available.
 
-No confirmation needed. Just open Claude Code and say hi.
+> **Note:** Running `/setup-harness` explicitly is the recommended way.
+> The harness also auto-detects if it is not configured, but this only
+> works reliably at the start of a fresh session, not in the middle of
+> an ongoing conversation.
 
 > **Note:** If your project was empty when you installed the harness,
 > `OVERVIEW.md`, `STACK.md`, and `DESIGN.md` were left with placeholders.
