@@ -95,12 +95,13 @@ your-project/
 │   │   ├── audit-security.md       # Run the security auditor subagent
 │   │   └── qa-automation.md        # Run the QA engineer subagent
 │   └── rules/
-│       ├── code-style.md           # Formatting, naming, style rules
-│       ├── conventions.md          # Commits, branches, patterns
+│       ├── code-style.md           # Harness code style rules (never edit)
+│       ├── custom-code-style.md    # Your own code style rules (committed)
+│       ├── conventions.md          # Your own conventions (committed)
 │       ├── features-format.md      # Format for memory entries
 │       ├── git.md                  # Harness Git rules (never edit)
 │       ├── custom-git.md           # Your own Git rules (committed)
-│       └── testing.md              # Testing framework, structure, commands
+│       └── testing.md              # Your own testing rules (committed)
 └── memory/
     ├── FEATURES.md                 # Active memory (last ~100 features)
     ├── FEATURES-HISTORY.md         # Archived features
@@ -363,9 +364,10 @@ The format is defined in `.claude/rules/features-format.md`.
 | `STACK.md` | Languages, frameworks, versions, key libraries. |
 | `DESIGN.md` | Your design system (colors, typography, components). |
 | `STRUCTURE.md` | A map of your project structure. |
-| `.claude/rules/code-style.md` | Formatting, naming, style rules. |
-| `.claude/rules/conventions.md` | Commits, branches, patterns. |
-| `.claude/rules/testing.md` | Testing framework, structure, commands. |
+| `.claude/rules/code-style.md` | Harness code style rules (do not edit). |
+| `.claude/rules/custom-code-style.md` | Your own code style rules (committed, never overwritten). |
+| `.claude/rules/conventions.md` | Your own conventions (committed, never overwritten). |
+| `.claude/rules/testing.md` | Your own testing rules (committed, never overwritten). |
 | `.claude/rules/features-format.md` | Format for memory entries. |
 | `.claude/rules/git.md` | Harness Git rules (do not edit). |
 | `.claude/rules/custom-git.md` | Your own Git rules (committed, never overwritten). |
@@ -377,12 +379,13 @@ The rules files are empty by default with clear placeholders. Fill them when you
 ### What NOT to edit
 
 - **`CLAUDE.md`** — Harness infrastructure. Managed by Minimal Claudeness and updated when you update the harness. Do not edit it.
+- **`.claude/rules/code-style.md`** — Harness code style rules. Updated with the harness. Do not edit. For your own rules, use `custom-code-style.md`.
 - **`.claude/rules/git.md`** — Harness Git rules. Updated with the harness. Do not edit. For your own rules, use `custom-git.md`.
 - **`harness-verified.json`** — Managed automatically by the setup.
 - **`harness-manifest.json`** — Updated by the update process.
 
 If you want to change project context, edit `OVERVIEW.md` or `STACK.md`.
-If you want to add project rules, edit `.claude/rules/` or `.claude/custom-instructions.md`.
+If you want to add project rules, edit `.claude/rules/custom-*` or `.claude/custom-instructions.md`.
 If you want personal preferences, edit `.claude/user-instructions.md`.
 
 ---
