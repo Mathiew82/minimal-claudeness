@@ -137,7 +137,7 @@ If you find conflicts with the project's current configuration
 (existing CLAUDE.md, skills, commands, etc.), ask me how to resolve
 each one before overwriting anything.
 
-When done, tell me to close and reopen Claude Code to activate the harness.
+When done, tell me to close and reopen Claude Code and run /setup-harness.
 ```
 
 Claude will read the docs, clone the harness, copy the files into your
