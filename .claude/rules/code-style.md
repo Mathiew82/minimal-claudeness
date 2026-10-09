@@ -17,3 +17,7 @@ which is in the vast majority of cases.
 
 No specific naming rules. Follow the conventions already present in the
 codebase. When starting fresh, use clear, descriptive names.
+
+# Custom rules
+
+@.claude/rules/custom-code-style.md
