@@ -54,7 +54,7 @@ Proceed to Step 4.
 ## Step 4 — Show what will change
 
 List the files that will be updated. These are the files listed in
-`harness_files` of the manifest.
+`harness_files` of the LATEST manifest.
 
 Show the user:
 
@@ -62,23 +62,19 @@ Show the user:
 
     Files that WILL be updated:
       - CLAUDE.md
-      - .claude/agents/code-reviewer.md
-      - .claude/agents/security-auditor.md
-      - .claude/agents/qa-engineer.md
-      - .claude/commands/*.md
-      - .claude/rules/features-format.md
-      - .claude/rules/git.md
       - harness-manifest.json
+      - .claude/agents/*.md
+      - .claude/commands/*.md
+      - .claude/rules/harness/*.md
 
     Files that will NOT be touched:
       - OVERVIEW.md, STACK.md
       - DESIGN.md, STRUCTURE.md
-      - .claude/rules/code-style.md, conventions.md, testing.md
+      - .claude/rules/user/*.md
       - .claude/settings.json, settings.local.json
-      - .claude/personal-instructions.md, custom-instructions.md
-      - memory/FEATURES.md, FEATURES-HISTORY.md
+      - .claude/custom-instructions.md, user-instructions.md
+      - memory/FEATURES.md, FEATURES-HISTORY.md, CHECKLIST.md
       - harness-verified.json
-      - CHECKLIST.md
       - .gitignore
 
 Ask: "Proceed with the update?"
