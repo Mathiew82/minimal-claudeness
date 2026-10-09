@@ -37,7 +37,7 @@ If the user's number is 0, or greater than or equal to N, ask again
    where K is the number of entries moved).
 3. Update the `FEATURES.md` counter (`**Count: N / 100**` → `**Count: N-K / 100**`).
 4. Preserve the format of the entries exactly as defined in
-   `.claude/rules/features-format.md`. Do not reformat or reword.
+   `.claude/rules/harness/features-format.md`. Do not reformat or reword.
 5. Report: "Moved K entries to history. Active memory: N-K / 100.
    History: M+K entries."
 
