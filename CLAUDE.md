@@ -84,7 +84,7 @@ and prevent duplicating work across sessions.
 - `memory/FEATURES.md` — Active memory. Most recent ~100 features.
 - `memory/FEATURES-HISTORY.md` — Archived features. Only read on demand.
 
-The exact entry format is defined in `.claude/rules/features-format.md`.
+The exact entry format is defined in `.claude/rules/harness/features-format.md`.
 Always follow that format when reading or writing entries.
 
 ## What counts as a "feature"
@@ -147,8 +147,8 @@ Keep it short, lowercase, hyphenated. No spaces, no uppercase, no underscores.
    - If on a different feature branch, ask the user before switching.
 2. Implement the feature on that branch.
 3. After implementing, register the entry in `memory/FEATURES.md`.
-4. Do NOT commit, push, or merge. See `.claude/rules/git.md` for the
-   commit and push workflow.
+4. Do NOT commit, push, or merge. See `.claude/rules/harness/git.md`
+   and `.claude/rules/user/git.md` for the commit and push workflow.
 
 ### Exception
 
@@ -196,7 +196,7 @@ The checklist must follow this exact format:
    - If the task represents a meaningful, searchable deliverable
      (e.g., a new endpoint, a new component, a new service), append a
      sub-entry to `memory/FEATURES.md` following the format in
-     `.claude/rules/features-format.md`.
+     `.claude/rules/harness/features-format.md`.
    - Do NOT register trivial sub-tasks (e.g., "renamed a file",
      "added a helper function").
 3. When ALL tasks are done:
@@ -216,7 +216,7 @@ The checklist must follow this exact format:
 1. If the feature added, removed, or moved files or folders, check
    STRUCTURE.md against the criteria in ARCHITECTURE and update it.
 2. Append a new entry at the END of `memory/FEATURES.md`.
-3. Follow the format defined in `.claude/rules/features-format.md`.
+3. Follow the format defined in `.claude/rules/harness/features-format.md`.
 4. Use today's date in `YYYY-MM-DD` format.
 5. Include description, keywords, and files.
 6. Update the counter at the top of `FEATURES.md` (`**Count: N / 100**`).
